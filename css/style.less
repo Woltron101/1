@@ -20,7 +20,9 @@
 /**{
 	transition: all 0.5s ease;
 }*/
-
+a {
+    
+}
 .clearfix:after {
 content : ".";
 visibility : hidden;
@@ -235,11 +237,15 @@ hr {
 		width: 35px;
 		-webkit-border-radius: 50%;
 				border-radius: 50%;
-		background: #000 url(../img/cart.png) 50% 50% no-repeat;
+		background: #000;
 		float: left;
 		&:hover {
 			background-color: @or;
 		}
+        svg {
+            height: 35px;
+            margin-left: 4px;
+        }
 	}
 	p {
 		font-family: Arial;
@@ -273,26 +279,28 @@ hr {
 			text-transform: uppercase;
 			font-weight: 400;
 			display: block;
+            padding-left: 30px;
 			&:hover,
 			&:active,
 			&:focus {
 				font-weight: bold;
 				text-decoration: none;
 				background-color: #f6f5f4;
-				i {
-					color: @or;
+				svg  path{
+					fill: @or;
 				}
 			}
 		}
-		i {
+		svg {
 			color: #d9d7d6;
-			font-size: 20px;
 			float: left;
-			width: 30px;
-			text-align: center;
-			vertical-align: middle;
-			line-height: 38px;
 			margin-right: 5px;
+            position: absolute;
+            left: 10px;
+            height: 38px;
+
+            
+            
 		}
 		.first-cir {
 			margin-left: -5px;
@@ -451,12 +459,15 @@ div.menu-slider {
 		height: 58px;
 		margin-left: -25px;/*
 		position: relative;*/
-		i {
-			font-size: 30px;
-			color: #7e7c7b;
+		svg {
+            width: 30px;
+            height: 30px;			
 			position: absolute;
 			top: 16px;
 			left: 30px;
+            path {
+                fill: #7e7c7b;
+            }
 		}
 		p {
 			color: #7e7c7b;
@@ -502,6 +513,12 @@ div.menu-slider {
 		cursor: pointer;
 		&:hover {
 			color: @or;
+            svg {
+                border-color: @or;
+                path {
+                    fill: @or;
+                }
+    }
 		}
 		span {
 			font-size: 15px;
@@ -698,6 +715,9 @@ div.menu-slider {
 		&:hover {
 			background-color: @dbl;
 		}
+        svg path {
+            fill:#fff !important;
+        }
 	}
 	.discount,
 	.new,
@@ -973,6 +993,13 @@ i.fa-flip-horizontal {
 				font-weight: bold;
 			}
 		}
+        svg {
+            width: 25px !important;
+            height: 40px !important;
+            path {
+                fill:#4c4c4c !important;
+            }
+        }
 	}
 }
 
@@ -1656,4 +1683,33 @@ i.fa-flip-horizontal {
 	.menu li .second-cir {
 		margin-left: -27px !important;
 	}
+}
+
+.sells-hd svg {
+    border: 3px solid black;
+    border-radius: 50%;
+    padding: 7px;
+    width: 35px;
+    height: 35px;
+    path {
+        fill:black;
+    }
+ 
+}
+
+
+
+.new svg {
+    height: 29px;
+    padding: 7px;
+    path {
+        fill:#fff;
+    }
+}
+
+.slide-descr button svg {
+    height: 16px;
+    position: absolute;
+    margin-left: 2px;
+    
 }
