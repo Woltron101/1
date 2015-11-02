@@ -15,41 +15,36 @@
 /*darkblue*/
 
 @gp: "Gotham Pro";
-@os: "@os";
+@os: "Open Sans";
 
 /**{
 	transition: all 0.5s ease;
 }*/
-a {
-    
-}
+
+a {}
+
 .clearfix:after {
-content : ".";
-visibility : hidden;
-display : block;
-height : 0;
-clear : both;
+	content: ".";
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
 }
 
 body {
 	font-family: '@os', sans-serif;
+	border-image: url(../lepestkoff_index.jpg);
 }
 
 .container {
 	min-width: 320px;
+	padding: 0;
 }
 
-
-/*
-#w1170 {
-	width: 1170px !important;
-	padding: 0;
-}*/
 
 .logo {
 	position: absolute;
 	margin: 10px;
-	
 }
 
 .header {
@@ -78,7 +73,7 @@ body {
 }
 
 ul.login {
-	margin: 34px 0 15px;
+	margin: 28px -3px 15px 0;
 	float: right;
 	padding-left: 0;
 	i {
@@ -93,9 +88,7 @@ ul.login {
 			font-family: Arial;
 			font-size: 15px;
 			font-weight: 400;
-			&:hover,
-			&:active,
-			&:focus {
+			&:hover, &:active, &:focus {
 				color: @or;
 			}
 		}
@@ -103,7 +96,7 @@ ul.login {
 }
 
 h1 {
-	margin: 28px 0 15px;
+	margin: 25px 0 15px;
 	float: left;
 	color: black;
 	font-family: @gp;
@@ -111,6 +104,7 @@ h1 {
 	font-weight: 400;
 	line-height: 27px;
 	text-transform: uppercase;
+    letter-spacing: -0.2px;
 }
 
 .brd::after {
@@ -118,7 +112,7 @@ h1 {
 	display: block;
 	width: 100%;
 	-webkit-border-image: url(img/border.png) 0 0 10 0 repeat;
-			border-image: url(img/border.png) 0 0 10 0 repeat;
+	border-image: url(img/border.png) 0 0 10 0 repeat;
 }
 
 hr {
@@ -135,7 +129,6 @@ hr {
 	clear: both;
 	position: absolute;
 	z-index: -11;
-
 }
 
 .header-nav {
@@ -143,24 +136,16 @@ hr {
 	font-size: 16px;
 	font-weight: bold;
 	text-transform: uppercase;
-	margin: 6px 0 15px -18px;
+	margin: 15px 0 17px 0;
 	padding: 0;
-	li a {
-		line-height: 50px;
-		vertical-align: middle;
-		color: black;
-		padding: 0 19px;
-		&:hover,
-		&:active,
-		&:focus {
-			color: @bl;
-			background-color: transparent;
-		}
-	}
+	width: 100%;
+	border-bottom: 1px dotted black;
 	li {
 		margin-right: 20px;
+		&:last-child::after {
+		display: none;
 	}
-	li::after {
+		&::after {
 		content: '';
 		display: block;
 		width: 19px;
@@ -170,9 +155,22 @@ hr {
 		left: 100%;
 		top: 0;
 	}
-	li:last-child::after {
-		display: none;
+		&:first-child a {
+			padding-left: 0;
+		}
+		a {
+		line-height: 50px;
+		vertical-align: middle;
+		color: black;
+		padding: 0 19px;
+		
+		&:hover, &:active, &:focus {
+			color: @bl;
+			background-color: transparent;
+		}
 	}
+	}
+	
 	.close-header-nav {
 		display: none;
 		position: absolute;
@@ -230,45 +228,54 @@ hr {
 }
 
 .cart {
-	float: right;
+	float: right;	
+    margin-right: 90px;
 	div {
 		cursor: pointer;
 		height: 35px;
 		width: 35px;
 		-webkit-border-radius: 50%;
-				border-radius: 50%;
+		border-radius: 50%;
 		background: #000;
 		float: left;
+		margin: 2px 0 0 5px;
 		&:hover {
 			background-color: @or;
 		}
-        svg {
-            height: 35px;
-            margin-left: 4px;
-        }
+		svg {
+			height: 35px;
+			margin-left: 7px;
+		}
 	}
 	p {
 		font-family: Arial;
 		font-weight: 400;
 		color: black;
 		font-size: 14px;
-		margin: 0 0 0 50px;
+		margin: -2px 0 0 50px;
 	}
 	p:last-child {
 		color: @or;
 		font-size: 24px;
+		margin-top: -8px;
 	}
 }
 
 .menu {
-	padding: 10px 0 10px 10px;
+	padding: 0;
+    margin: 0;
 	li {
 		list-style-type: none;
 		padding: 0;
 		border-bottom: 1px solid #d9d7d6;
-		&:hover,
-		&:active,
-		&:focus {
+		&:last-child {
+			border-bottom: 0;
+			padding-bottom: 10px;
+		}
+		&:first-child {
+			padding-top: 10px;
+		}
+		&:hover, &:active, &:focus {
 			background-color: #f6f5f4;
 		}
 		a {
@@ -279,14 +286,12 @@ hr {
 			text-transform: uppercase;
 			font-weight: 400;
 			display: block;
-            padding-left: 30px;
-			&:hover,
-			&:active,
-			&:focus {
+			padding-left: 60px;
+			&:hover, &:active, &:focus {
 				font-weight: bold;
 				text-decoration: none;
 				background-color: #f6f5f4;
-				svg  path{
+				svg path {
 					fill: @or;
 				}
 			}
@@ -294,13 +299,10 @@ hr {
 		svg {
 			color: #d9d7d6;
 			float: left;
-			margin-right: 5px;
-            position: absolute;
-            left: 10px;
-            height: 38px;
-
-            
-            
+			margin: 0 5px 0 18px;
+			position: absolute;
+			left: 10px;
+			height: 38px;
 		}
 		.first-cir {
 			margin-left: -5px;
@@ -322,17 +324,27 @@ h3.l-m-header {
 	background-color: @bl;
 	padding: 18px 0 0 20px;
 	height: 44px;
-	margin: 6px 0 0 4px;
+	margin: 0;
 	display: block;
+	position: relative;
 	&:hover {
 		background-color: @dbl;
 	}
+	&::after {
+			content: ''; 
+			position: absolute; 
+			left: 30px; 
+			bottom: -14px;
+			border: 7px solid transparent; 
+			border-top: 7px solid #3ca4a4;
+		}
 }
 
 div.menu-slider {
-	margin: 0;
-	div.col-md-3,
-	div.col-md-9 {
+	margin: 13px 0 0 5px;
+	
+	border: 1px solid #d9d7d6;
+	div.col-md-3, div.col-md-9 {
 		padding: 0;
 	}
 	div.col-md-3 {
@@ -346,13 +358,22 @@ div.menu-slider {
 .dropdown-menu {
 	position: absolute;
 	left: 100%;
-	top: 0;
+	top: -6px;
 	border: 0;
 	margin: 0;
 	padding: 0;
 	-webkit-border-radius: 0;
-			border-radius: 0;
+	border-radius: 0;
+	li {
+		&:last-child {
+			padding-bottom: 0px;
+		}
+		&:first-child {
+			padding-top: 0px;
+		}
+	}
 	li a {
+		padding-left: 30px;
 		margin: 0;
 		height: 40px;
 		width: 270px;
@@ -361,9 +382,7 @@ div.menu-slider {
 		font-size: 14px;
 		font-weight: 400;
 		text-transform: none;
-		&:hover,
-		&:active,
-		&:focus {
+		&:hover, &:active, &:focus {
 			font-weight: bold;
 			background-color: #d9d7d6;
 		}
@@ -371,11 +390,10 @@ div.menu-slider {
 }
 
 #fullcarousel-example {
-	margin-top: 6px;
 	.item {
 		img {
 			float: left;
-			margin-right: 25px;
+			margin-right: 29px;
 			width: 58%;
 		}
 		h3 {
@@ -384,9 +402,17 @@ div.menu-slider {
 			font-size: 24px;
 			font-weight: 400;
 			text-transform: uppercase;
-			margin-top: 0;
+			margin:0 0 15px 0;
 			padding: 25px 0 19px;
 			line-height: 29px;
+		}
+		p.sl-text {
+			font-family: Arial;
+			color:  #7e7c7b;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 20px;
+			margin-bottom: 15px;
 		}
 		span {
 			color: #e84b27;
@@ -409,12 +435,14 @@ div.menu-slider {
 	}
 	.slide-descr {
 		position: relative;
-		height: 366px;
+		height: 376px;
 		float: left;
-		width: 38%;
-	}
-	.fa-circle {
-		color: transparent;
+		width: 38.6%;
+		button svg {
+			height: 16px;
+			position: absolute;
+			margin-left: 2px;
+		}
 	}
 	a.left,
 	a.right {
@@ -422,33 +450,40 @@ div.menu-slider {
 		height: 50px;
 		width: 50px;
 		-webkit-border-radius: 50%;
-				border-radius: 50%;
+		border-radius: 50%;
 		text-shadow: none;
 		opacity: 1;
-		color: #d9d7d6;
-		background-image: none;
 		-webkit-transform: translateY(-50%);
-				-ms-transform: translateY(-50%);
-			transform: translateY(-50%);
-		font-size: 20px;
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
 		position: absolute;
-		-webkit-filter:none;
-				filter:none;
-	}
+		-webkit-filter: none;
+		filter: none;
+		
+			
+		}
+	
 	a.left {
 		left: 55%;
-		&:hover {
-			.fa-circle {
-				color: #aaa;
-			}
-		}
 	}
 	a.right {
 		right: -5%;
-		&:hover {
-			.fa-circle {
-				color: #aaa;
-			}
+		transform: rotate(180deg) translateY(50%);
+	}
+	a.left, 
+	a.right, 
+	.owl-next, 
+	.owl-prev  {
+		path.control-bg {
+			fill:#fff !important;
+		}
+	}
+	a.left:hover, 
+	a.right:hover, 
+	.owl-next:hover, 
+	.owl-prev:hover  {
+		path.control-bg {
+			fill:#6d6d6d !important;
 		}
 	}
 	.timer {
@@ -457,21 +492,23 @@ div.menu-slider {
 		background-color: #f6f5f4;
 		outline: hidden;
 		height: 58px;
-		margin-left: -25px;/*
+		margin-left: -29px;
+		/*
 		position: relative;*/
 		svg {
-            width: 30px;
-            height: 30px;			
+			width: 30px;
+			height: 30px;
 			position: absolute;
 			top: 16px;
 			left: 30px;
-            path {
-                fill: #7e7c7b;
-            }
+			transform: rotate(-90deg);
+			path {
+				fill: #7e7c7b;
+			}
 		}
 		p {
 			color: #7e7c7b;
-			font-family: "@os";
+			font-family: @os;
 			font-size: 12px;
 			font-weight: 400;
 			text-transform: uppercase;
@@ -480,19 +517,20 @@ div.menu-slider {
 		}
 		.time {
 			color: black;
-			font-family: "@os";
+			font-family: @os;
 			font-size: 22px;
 			font-weight: 700;
 			float: right;
-			margin: 5px 5px 1px 1px;
+			margin: 5px 16px 1px 1px;
+			
 		}
 		.descr {
-			font-family: "@os";
+			font-family: @os;
 			font-size: 9px;
 			font-weight: 400;
 			text-transform: uppercase;
 			float: right;
-			margin: -6px -2px 1px 1px;
+			margin: -6px 10px 1px 1px;
 			span {
 				color: #7e7c7b;
 				margin: 0 9px;
@@ -504,68 +542,78 @@ div.menu-slider {
 .sells-hd {
 	h3 {
 		color: black;
-		margin: 10px 0 10px 5px;
+		margin: 29px 0 10px 5px;
 		font-family: @gp;
 		font-size: 20px;
 		font-weight: bold;
 		text-transform: uppercase;
 		clear: both;
 		cursor: pointer;
+		padding-left: 40px;
 		&:hover {
 			color: @or;
-            svg {
-                border-color: @or;
-                path {
-                    fill: @or;
-                }
-    }
+			svg {
+				border-color: @or;
+				path {
+					fill: @or;
+				}
+			}
 		}
 		span {
 			font-size: 15px;
 		}
 	}
 	.hd-c {
-		margin-top: 35px;
+		margin-top: 39px;
+	}
+	
+		.last {
+			margin-top: 11px;
+			margin-bottom: 7px;
+		}
+	svg {
+		border: 3px solid black;
+		border-radius: 50%;    
+		padding: 5px;
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		left: 20px;
+		path {
+			fill: black;
+		}
 	}
 }
+
 .wrapper {
-	
 	width: 100%;
 	background-color: #f6f5f4;
-
 }
-.bouquet {
-	max-width: 1140px;
 
+.bouquet {
+	
+	max-width: 1200px;
 	background-color: #f6f5f4;
-	padding-bottom: 12px;
 	position: relative;
 	margin: 0 auto;
-
-
-	a.left-bouquet, a.right-bouquet{
+	margin-top: 4px;
+	a.left-bouquet, a.right-bouquet {
 		top: 50%;
 		height: 50px;
 		width: 50px;
 		-webkit-border-radius: 50%;
-				border-radius: 50%;
+		border-radius: 50%;
 		text-shadow: none;
 		opacity: 1;
 		color: #d9d7d6;
 		background-image: none;
 		-webkit-transform: translateY(-50%);
-				-ms-transform: translateY(-50%);
-			transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
 		font-size: 20px;
 		position: absolute;
 		z-index: 5;
-		&:hover {
-
-	.fa.fa-circle.fa-stack-2x {
-		display: block;
-
-	}
-		}
+		
 	}
 	a.left-bouquet {
 		left: 0;
@@ -573,51 +621,61 @@ div.menu-slider {
 	a.right-bouquet {
 		right: 0;
 	}
-	.fa.fa-circle.fa-stack-2x {
-		display: none;
-		color: #aaa;
-
-	}
 	.owl-prev {
 		height: 50px;
 		width: 50px;
 		position: absolute;
 		top: 40%;
 		right: -1%;
-		background: url(../img/slider_sprite.png) 0 0 no-repeat;
+		-webkit-transform: rotate(80deg);
+		-ms-transform: rotate(800deg);
+		transform: rotate(180deg);
 		color: transparent;
-		&:hover {			
-			background-position-y: 100%;
-			transform: rotate(180deg);
+		path.control-bg {
+			fill:#fff !important;
+		}
+		&:hover {
+			path.control-bg {
+			fill:#6d6d6d !important;
+			}
 		}
 	}
 	.owl-next {
 		.owl-prev;
 		left: -1%;
-		-webkit-transform: rotate(180deg);
-		-ms-transform: rotate(180deg);
-		transform: rotate(180deg);
+		-webkit-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		transform: rotate(0deg);
 		&:hover {
-			transform: rotate(0deg);
+			path.control-bg {
+				fill:#6d6d6d !important;
+			}
 		}
-
 	}
+//	.active:nth-child(8) .product-box {
+//	
+//		margin-right: 0;	
+//		
+//	}
 }
-
-
+//.active:nth-child(4) .product-box {	
+//	display: none;
+//}
 .product-box {
 	font-family: Arial;
-	padding: 30px 12px;
+	padding: 30px 0;
+	margin:0 15px;
+
 	img {
-		margin-top: 5px;
-		width: 90%  !important;
+		margin: -6px 28px;
+		width: 80% !important;
 		height: auto;
 	}
 	h4 {
 		color: black;
 		font-size: 18px;
 		font-weight: 700;
-		margin-bottom: 0;
+		margin: 20px 0 0 0;
 	}
 	.prise {
 		color: #e84b27;
@@ -627,18 +685,34 @@ div.menu-slider {
 	}
 	.stars {
 		float: right;
-		margin: 5px 7px 0 0;
+		margin: 8px 4px 0 0;
 		letter-spacing: -0.5px;
-		color: @or;
-		.fa-star:hover .fa-star-half:hover {
-			color: @dor;
-			cursor: pointer !important;
+		
+		
+		svg path {
+			fill:@or !important;
 		}
-		.fa.fa-star-half.fa-flip-horizontal {
-			color: #aaa;
-			cursor: pointer !important;
+		svg:hover path {
+			fill:#dadada !important;
 		}
-
+		svg {
+			path:hover {
+			  fill:@or !important;
+			}
+			path:hover+path {
+			  fill:@or !important;
+			}
+			path:hover+path+path {
+			  fill:@or !important;
+			}
+			path:hover+path+path+path {
+			  fill:@or !important;
+			}
+			path:hover+path+path+path+path {
+			  fill:@or !important;
+			}
+		}
+		
 	}
 	i.fa-flip-horizontal {
 		color: #dadada;
@@ -649,7 +723,7 @@ div.menu-slider {
 		font-size: 13px;
 		font-weight: 400;
 		line-height: 18px;
-		margin: 0;
+		margin: 0 0 5px 0;
 		padding: 0;
 		list-style-type: none;
 	}
@@ -665,7 +739,7 @@ div.menu-slider {
 		background-color: @or;
 		display: block;
 		float: left;
-		margin-left: -18px;
+		margin-left: -15px;
 		position: absolute;
 		bottom: 0;
 		text-align: center;
@@ -683,7 +757,7 @@ div.menu-slider {
 		font-weight: 400;
 		line-height: 38px;
 		text-transform: uppercase;
-		width: 76px;
+		width: 85px;
 		height: 34px;
 		background-color: #dddcdb;
 		display: block;
@@ -694,7 +768,6 @@ div.menu-slider {
 		text-align: center;
 		&:hover {
 			background-color: #aaa;
-			
 		}
 		&:hover {
 			text-decoration: none !important;
@@ -715,9 +788,9 @@ div.menu-slider {
 		&:hover {
 			background-color: @dbl;
 		}
-        svg path {
-            fill:#fff !important;
-        }
+		svg path {
+			fill: #fff !important;
+		}
 	}
 	.discount,
 	.new,
@@ -749,12 +822,19 @@ div.menu-slider {
 	.discount {
 		.icon {
 			background-color: #4b4b4b;
-			&:hover {				
-			background-color: #393939;
+			&:hover {
+				background-color: #393939;
 			}
 		}
 	}
 	.new {
+		svg {
+			height: 29px;
+			padding: 7px;
+			path {
+				fill: #fff;
+			}
+		}
 		.icon {
 			background: @bl url(../img/lap.png) 50% 50% no-repeat;
 			&:hover {
@@ -776,21 +856,25 @@ div.menu-slider {
 	border: 1px solid #dddcdb;
 	background-color: #fff;
 	height: auto;
-	padding: 28px 0 35px 18px;
+	padding: 28px 0 35px 15px;
 	position: relative;
 }
+
 div.owl-item:not(.active) {
 	visibility: hidden;
 	-webkit-transition: all 1s ease;
-			transition: all 1s ease;
+	transition: all 1s ease;
 }
+
 div.owl-item {
 	-webkit-transition: all 0.5s ease;
-			transition: all 0.5s ease;
+	transition: all 0.5s ease;
 }
-div.owl-item {
 
+.container.center {
+	width: 1200px;
 }
+
 .center-row {
 	background-color: #fff;
 	.product-box {
@@ -809,7 +893,7 @@ i.fa-flip-horizontal {
 }
 
 .article-comment {
-	padding: 36px 0 30px;
+	padding: 48px 0 30px;
 	h3 {
 		color: black;
 		font-family: @gp;
@@ -839,7 +923,7 @@ i.fa-flip-horizontal {
 		color: black;
 		font-family: Arial;
 		font-size: 19px;
-		margin: 25px 0 10px 0;
+		margin: 25px 0 8px 0;
 	}
 	.date {
 		color: @bl;
@@ -915,20 +999,19 @@ i.fa-flip-horizontal {
 		font-weight: 400;
 	}
 }
-.wrapper-soc {	
+
+.wrapper-soc {
 	border-top: 1px solid #dbdbda;
 }
-.social {	
+
+.social {
 	max-width: 1170px;
 	background-color: #f6f5f4;
 	padding: 30px 0 35px;
 	margin: 0 auto;
 	.letter {
 		float: left;
-		font-size: 45px;
-		color: #c5c4c3;
-		padding: 0 26px;
-		margin: -10px;
+		margin: 0 14px 0 0;
 	}
 	form {
 		float: left;
@@ -969,7 +1052,7 @@ i.fa-flip-horizontal {
 	.soc-btn {
 		color: #4c4c4c;
 		float: right;
-		margin: 0 94px 0 0;
+		margin: -4px 77px 0 0;
 		font-size: 25px;
 		width: 400px;
 		font-family: arial, "sans-serif";
@@ -977,7 +1060,7 @@ i.fa-flip-horizontal {
 			cursor: pointer;
 			border: 1px solid #cececd;
 			-webkit-border-radius: 5px;
-					border-radius: 5px;
+			border-radius: 5px;
 			float: left;
 			height: 40px;
 			width: 40px;
@@ -993,13 +1076,13 @@ i.fa-flip-horizontal {
 				font-weight: bold;
 			}
 		}
-        svg {
-            width: 25px !important;
-            height: 40px !important;
-            path {
-                fill:#4c4c4c !important;
-            }
-        }
+		svg {
+			width: 25px !important;
+			height: 40px !important;
+			path {
+				fill: #4c4c4c !important;
+			}
+		}
 	}
 }
 
@@ -1045,7 +1128,7 @@ i.fa-flip-horizontal {
 	}
 	.footer-list {
 		float: left;
-		margin: -5px 23px;
+		margin: -5px 26px;
 		h3 {
 			font-family: Arial;
 			color: black;
@@ -1089,8 +1172,8 @@ i.fa-flip-horizontal {
 	.owl-next {
 		left: -2%;
 	}
-
 }
+
 @media (max-width: 1200px) {
 	h1 {
 		font-size: 19px;
@@ -1105,14 +1188,14 @@ i.fa-flip-horizontal {
 		}
 		li::after {
 			-webkit-box-sizing: content-box;
-					box-sizing: content-box;
+			box-sizing: content-box;
 		}
 	}
 	.search input[type="text"] {
 		width: 400px;
 	}
 	.wrapper .bouquet {
-		width: 970px;		
+		width: 970px;
 		padding: 0 15px;
 	}
 	.product-box {
@@ -1147,7 +1230,6 @@ i.fa-flip-horizontal {
 				padding: 5px 0;
 				font-size: 20px;
 			}
-
 			.timer {
 				bottom: 0;
 				position: absolute;
@@ -1169,8 +1251,6 @@ i.fa-flip-horizontal {
 		}
 	}
 }
-
-
 
 @media (max-width: 1169px) and (min-width: 992px) {
 	.comment {
@@ -1233,7 +1313,7 @@ i.fa-flip-horizontal {
 		font-size: 13px;
 	}
 	.wrapper .bouquet {
-		width: 750px;		
+		width: 750px;
 		padding: 0 15px;
 	}
 }
@@ -1281,6 +1361,7 @@ i.fa-flip-horizontal {
 		}
 	}
 }
+
 @media (max-width: 992px) and (min-width: 768px) {
 	.social form input[type="text"] {
 		width: 58%;
@@ -1304,7 +1385,6 @@ i.fa-flip-horizontal {
 		}
 	}
 }
-
 
 @media (max-width: 768px) {
 	.cart {
@@ -1406,9 +1486,9 @@ i.fa-flip-horizontal {
 	}
 }
 
-@media (max-width: 767px) {	
+@media (max-width: 767px) {
 	.wrapper .bouquet {
-		width: 100%;		
+		width: 100%;
 		padding: 0 15px;
 	}
 	.logo {
@@ -1428,8 +1508,8 @@ i.fa-flip-horizontal {
 			position: absolute;
 			left: 50%;
 			-webkit-transform: translateX(-50%);
-					-ms-transform: translateX(-50%);
-				transform: translateX(-50%);
+			-ms-transform: translateX(-50%);
+			transform: translateX(-50%);
 			top: 37px;
 		}
 	}
@@ -1555,6 +1635,7 @@ i.fa-flip-horizontal {
 		position: static;
 		float: none;
 		width: 100%;
+		
 		a:before {
 			content: "\f105 ";
 			display: inline;
@@ -1613,7 +1694,6 @@ i.fa-flip-horizontal {
 		padding-left: 5px;
 		padding-right: 5px;
 	}
-
 	.owl-item {
 		width: 100%;
 		float: none;
@@ -1683,33 +1763,4 @@ i.fa-flip-horizontal {
 	.menu li .second-cir {
 		margin-left: -27px !important;
 	}
-}
-
-.sells-hd svg {
-    border: 3px solid black;
-    border-radius: 50%;
-    padding: 7px;
-    width: 35px;
-    height: 35px;
-    path {
-        fill:black;
-    }
- 
-}
-
-
-
-.new svg {
-    height: 29px;
-    padding: 7px;
-    path {
-        fill:#fff;
-    }
-}
-
-.slide-descr button svg {
-    height: 16px;
-    position: absolute;
-    margin-left: 2px;
-    
 }
