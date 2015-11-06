@@ -17,7 +17,7 @@ ul.tree {
 	padding-left: 10px;
 	li {
 		display: inline-block;
-		&:last-child a {
+		&: last-child a {
 			color: #000;
 		}
 		a {
@@ -34,7 +34,7 @@ ul.tree {
 .tovari {
 	padding: 0 0 0 0px;
 	float: right;
-
+	padding-bottom: 7px;
 	width: 77%;
 }
 .cat-side-bar {
@@ -52,63 +52,76 @@ ul.tree {
 		line-height: 44px;
 		vertical-align: middle;
 		padding-left: 20px;
-		
 		position: relative;
-		margin-bottom: 5px;
-		margin-top: 28px;
+		margin: 0;
+		cursor: pointer;
+		border-bottom: 1px solid #777;
+		&: hover {
+			background-color: #215959;
+			&: : after {
+				border-top-color: #215959;
+			}
+		}
+	}
+	h3.drop {
+		border-bottom: 0;
+		&: hover: : after {
+			border-top-color: #215959;
+		}
 		&::after {
-			content: ''; 
-			position: absolute; 
-			left: 20px; 
+			content: '';
+			position: absolute;
+			left: 27px;
 			bottom: -14px;
-			border: 7px solid transparent; 
+			border: 7px solid transparent;
 			border-top: 7px solid #3ca4a4;
 		}
 	}
-	#from {
+	.price {
+		.price-change {
+			margin: 23px 0 50px;
+			display: none;
+		}
+	}
+	#from,
+	#to {
 		width: 81px;
 		height: 44px;
 		background-color: #f6f5f4;
-		border: 1px solid #bfbfbf;		
+		border: 1px solid #bfbfbf;
 		color: #7e7c7b;
 		font-family: Arial;
 		font-size: 12px;
 		font-weight: 400;
+		margin: 0 12px 0 8px;
+		padding: 0 5px;
 	}
 	#to {
 		width: 91px;
 		height: 44px;
-		background-color: #f6f5f4;
-		border: 1px solid #bfbfbf;
-	}
-	.price {
-		span {
-			color: #7e7c7b;
-			font-family: Arial;
-			font-size: 12px;
-			font-weight: 400;
-		}
+		margin: 0 23px 0 14px;
 	}
 	input[type="checkbox"] {
 		display: none;
 	}
+	span.lb-text {
+		padding-left: 31px;
+	}
+	.check-wrap svg {
+		margin-bottom: 5px;
+		display: none;
+	}
 	.check-wrap {
-		position: absolute; 
-		left: 3px; 
-		top: 14px; 
+		position: absolute;
+		left: 3px;
+		top: 14px;
 		width: 12px;
 		height: 12px;
 		background-color: white;
 		border: 1px solid #939393;
 		font-family: FontAwesome;
 		vertical-align: middle;
-		z-index: -11;
-		i {
-			position: relative;
-			/*top: -6px;*/
-			font-size: 11px;
-			display: none;
-		}
+		margin: 0 0 0 5px;		
 	}
 	label {
 		color: black;
@@ -118,11 +131,9 @@ ul.tree {
 		text-transform: uppercase;
 		line-height: 39px;
 		vertical-align: middle;
-		margin: 0;/*
-		padding-left: 27px;*/
+		margin: 0;
 		width: 100%;
 		z-index: 10;
-
 		/*&::before {
 			content: '';
 			position: absolute; 
@@ -136,7 +147,8 @@ ul.tree {
 			vertical-align: middle;
 			margin-bottom: 10px;
 			padding-bottom: 10px;
-		}*//*
+		}*/
+		/*
 		&::before {
 			content: '\f00c';
 			position: absolute; 
@@ -152,20 +164,31 @@ ul.tree {
 			padding-bottom: 10px;
 		}*/
 	}
-	input:checked+label+.check-wrap i {
+	input:checked+label .check-wrap svg {
 		display: block;
 	}
 	ul {
 		list-style-type: none;
 		padding-left: 0;
+		margin: 5px 0 29px;
+		height: 0;
+		display: none;
+		&.show {
+			display: block;
+			height: auto;
+		}
 	}
 	li {
 		border-bottom: 1px solid #ebe8e4;
-		
 		position: relative;
 	}
 	.price {
-		height: 170px;
+		span {
+			color: #7e7c7b;
+			font-family: Arial;
+			font-size: 12px;
+			font-weight: 400;
+		}
 		h3 {
 			margin-top: 0;
 		}
@@ -174,13 +197,11 @@ ul.tree {
 .view-form {
 	margin-left: 30px;
 	label {
-		/*width: 36px;
-		height: 36px;*/
 		background-color: white;
 		border: 1px solid #777;
 		padding: 8px 8px 8px 8px;
 		margin-right: 8px;
-		&[for="vw2"] {			
+		&[for="vw2"] {
 			padding: 8px 7px 7px 8px;
 		}
 		.blocks {
@@ -210,10 +231,10 @@ ul.tree {
 		clear: both;
 	}
 }
-select#sort {	
+select#sort {
 	width: 271px;
 	height: 37px;
-	padding-right: 20px; 
+	padding-right: 20px;
 	background-color: #f6f5f4;
 	border: 1px solid #777;
 	color: #7e7c7b;
@@ -231,10 +252,10 @@ select#sort {
 	appearance: none!important;
 }
 form.view-form {
-	float: left;	
+	float: left;
 	input {
 		display: none;
-		&:checked+label {
+		&: checked+label {
 			border-color: black;
 			div {
 				background-color: black;
@@ -242,35 +263,35 @@ form.view-form {
 		}
 	}
 }
-input[type="submit"]{	
-		color: white;
-		font-family: Arial;
-		font-size: 14px;
-		font-weight: 400;
-		text-transform: uppercase;
-		width: 170px;
-		height: 37px;
-		background-color: #f85028;
-		border:0;
-	}
+input[type="submit"] {
+	color: white;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: 400;
+	text-transform: uppercase;
+	width: 170px;
+	height: 37px;
+	background-color: #f85028;
+	border: 0;
+}
 form.sort {
-	float: right;	
-} 
+	float: right;
+}
 .product-box-wrap {
 	clear: both;
 	.product-box {
 		width: 30%;
-		margin: 24px 0 40px 30px;
+		margin: 24px 0 31px 30px;
 		float: left;
 		padding: 0;
 		img {
-			width: 78% !important;			
+			width: 78% !important;
 			margin: 0 11%;
 		}
 		h4 {
 			margin: 15px;
 		}
-}
+	}
 }
 .wrapper {
 	position: static;
@@ -281,8 +302,6 @@ form.sort {
 	position: absolute;
 	left: 50%;
 	bottom: -62px;
-
-
 }
 .page {
 	font-family: Arial;
@@ -291,14 +310,14 @@ form.sort {
 	font-weight: 700;
 	width: 30px;
 	height: 30px;
-	border: 1px solid #9c9c9c;	
+	border: 1px solid #9c9c9c;
 	float: left;
 	text-align: center;
 	margin-left: 7px;
-	&:first-child {
+	&: first-child {
 		margin-left: 0;
 	}
-	a {	
+	a {
 		line-height: 30px;
 		vertical-align: middle;
 		color: black;
@@ -308,25 +327,122 @@ form.sort {
 	&:hover {
 		a {
 			color: white;
-		}		
-		font-weight: 400;
-		background-color: #3ca4a5;
+		}
+		font-weight:400;
+		background-color:#3ca4a5;
 		border:0;
 	}
 }
 .pagesbg {
 	margin-top: -15px;
 	height: 100px;
-	
-
-
 }
+/* price*/
 
-
+#slider {
+	height: 5px;
+	margin-top: 27px;
+}
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+	background: #f85028;
+}
+.ui-slider-horizontal .ui-slider-handle {
+	top: -8px;
+	margin-left: -.6em;
+}
+.ui-slider .ui-slider-handle {
+	position: absolute;
+	z-index: 2;
+	width: 12px;
+	height: 17px;
+	cursor: default;
+	-ms-touch-action: none;
+	touch-action: none;
+}
+.ui-widget-content {
+	border: 1px solid #777;
+	background: #777;
+	color: #222222;
+	height: .8em;
+}
+.ui-slider {
+	position: relative;
+}
+.ui-slider-horizontal .ui-slider-range {
+	top: 0;
+	height: 100%;
+}
+.ui-slider .ui-slider-range {
+	position: absolute;
+	z-index: 1;
+	font-size: .7em;
+	display: block;
+	border: 0;
+	background-position: 0 0;
+}
+.ui-widget-header {
+	border: 1px solid #3ca4a4;
+	background: #3ca4a4;
+	color: #222222;
+	font-weight: bold;
+}
+/*
+	==========>full width styles<============
+*/
+.full-width-view {
+	.product-box-wrap .product-box {
+		width: 100% !important;
+		img {
+			height: 200px;
+			width: auto !important;
+			float: left;
+			margin: 0 3%;
+		}
+		.stars {
+			margin-right: 300px;
+		}
+		.text {
+			width: 41%;
+			clear: none;
+			float: left;
+			margin-right: 200px;
+		}
+		.pr-bg {
+			padding: 8px 0 8px 15px;
+			float: left;
+		}
+		.quick-order,
+		.compare,
+		.cart-btn {
+			width: 200px;
+			right: 15px;
+			bottom: 15px;
+			height: 50px;
+			line-height: 50px;
+		}
+		.quick-order {
+			bottom: 125px;
+		}
+		.compare {
+			bottom: 70px;
+			left: auto;
+		}
+	}
+}
 @media (max-width: 1200px) {
 	.product-box-wrap .product-box {
 		margin-left: 3%;
-	}	
+	}
+	.cat-side-bar {
+		#from, #to {
+			width: 25%;
+		}
+	}
+	.view-form {
+		display: none;
+	}
 }
 @media (max-width: 992px) {
 	.product-box-wrap .product-box {
@@ -334,25 +450,33 @@ form.sort {
 	}
 	select#sort {
 		margin-right: 5px;
-	}	
+	}
+	.cat-side-bar {
+		#from, #to {
+			width: 31%;
+			margin: 0 2% 0 2%;
+		}
+		#to {
+			margin: 0 4% 0 2%;
+		}
+	}
 }
 @media (max-width: 768px) {
-	.cat-side-bar  {
+	.cat-side-bar {
 		float: left;
-	}	
+	}
 }
 @media (max-width: 670px) {
-	.cat-side-bar  {
+	.cat-side-bar {
 		width: 33%;
 	}
 	.tovari {
 		width: 66%;
-		margin-left:1%;
+		margin-left: 1%;
 	}
 	.product-box-wrap .product-box {
 		width: 100%;
 		margin: 0;
-		
 	}
 	form.view-form {
 		margin-left: 0;
@@ -364,25 +488,22 @@ form.sort {
 	input[type=submit] {
 		width: 100px;
 		font-size: 10px;
-	}		
-
+	}
 }
 @media (max-width: 560px) {
-	.cat-side-bar  {
+	.cat-side-bar {
 		width: 100%;
 	}
 	.tovari {
 		width: 100%;
-		margin-left:0;
-	}	
-
+		margin-left: 0;
+	}
 }
 @media (max-width: 355px) {
-	select#sort	{
+	select#sort {
 		width: 120px;
 	}
 	.view-form label {
 		margin-right: 3px;
 	}
-
 }
