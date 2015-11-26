@@ -45,7 +45,7 @@
 }*/
 /* font-family: "GothamProRegular"; */
 @font-face {
-    font-family: "GothamProRegular";
+    font-family: "Gotham Pro";
     src: url("../font/GothamProRegular/GothamProRegular.eot");
     src: url("../font/GothamProRegular/GothamProRegular.eot?#iefix")format("embedded-opentype"),
     url("../font/GothamProRegular/GothamProRegular.woff") format("woff"),
@@ -55,13 +55,13 @@
 }
 /* font-family: "GothamProBold"; */
 @font-face {
-    font-family: "GothamProBold";
+    font-family: "Gotham Pro";
     src: url("../font/GothamProBold/GothamProBold.eot");
     src: url("../font/GothamProBold/GothamProBold.eot?#iefix")format("embedded-opentype"),
     url("../font/GothamProBold/GothamProBold.woff") format("woff"),
     url("../font/GothamProBold/GothamProBold.ttf") format("truetype");
     font-style: normal;
-    font-weight: normal;
+    font-weight: 700;
 }
 /* font-family: "GothamProBlack"; */
 @font-face {
@@ -145,7 +145,7 @@
 }
 
 @font-face {
-    font-family: "OpenSansRegular";
+    font-family: "Open Sans";
     src: url("../font/OpenSansRegular/OpenSansRegular.eot");
     src: url("../font/OpenSansRegular/OpenSansRegular.eot?#iefix")format("embedded-opentype"),
     url("../font/OpenSansRegular/OpenSansRegular.woff") format("woff"),
@@ -172,13 +172,13 @@
     font-weight: normal;
 }
 @font-face {
-    font-family: "OpenSansBold";
+    font-family: "Open Sans";
     src: url("../font/OpenSansBold/OpenSansBold.eot");
     src: url("../font/OpenSansBold/OpenSansBold.eot?#iefix")format("embedded-opentype"),
     url("../font/OpenSansBold/OpenSansBold.woff") format("woff"),
     url("../font/OpenSansBold/OpenSansBold.ttf") format("truetype");
     font-style: normal;
-    font-weight: normal;
+    font-weight: 700;
 }
 @font-face {
     font-family: "OpenSansExtraBold";

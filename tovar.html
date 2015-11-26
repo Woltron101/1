@@ -9,10 +9,12 @@
 	<title>Доставка цветов и подарков</title>
 	<link href="css/bootstrap.css" rel="stylesheet">
 	<link href="css/whhg.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/easydropdown.css"/>
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" href="css/tovar.css" />
 	<link rel="stylesheet" type="text/css" href="css/fonts.css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
 	<!-- <link rel="icon" type="image/vnd.microsoft.icon" href=""> -->
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -21,6 +23,9 @@
 	<!-- Основные стили -->
 	<link rel="stylesheet" href="owl-carousel/owl.carousel.css">
 	<link rel="stylesheet" href="owl-carousel/owl.theme.css">
+	<link href="css/jquery.lightbox-0.5.css" rel="stylesheet" type="text/css" />
+	
+
 	<script>
 	</script>
 </head>
@@ -28,7 +33,9 @@
 <body>
 	<div class="container" id="w1170">
 		<div class="logo">
-			<img src="img/logo.png" alt="">
+			<a href="index.html">
+				<img src="img/logo.png" alt="">
+			</a>
 		</div>
 		<div class="row header brd">
 			<div class="col-md-12">
@@ -113,7 +120,7 @@
 								<path d="M 16.75 17.15C 14.79 17.15 12.99 16.46 11.57 15.31 10.57 15.82 9.45 16.11 8.25 16.11 4.18 16.11 0.89 12.82 0.89 8.75 0.89 4.68 4.18 1.39 8.25 1.39 9.54 1.39 10.75 1.72 11.81 2.3 13.19 1.27 14.89 0.65 16.75 0.65 21.31 0.65 25 4.34 25 8.9 25 13.45 21.31 17.15 16.75 17.15ZM 12.08 4.55C 11.02 5.69 10.36 7.22 10.36 8.9 10.36 10.5 10.95 11.95 11.92 13.07 13.15 12.03 13.95 10.49 13.95 8.75 13.95 7.08 13.22 5.59 12.08 4.55ZM 8.25 3.05C 5.1 3.05 2.55 5.6 2.55 8.75 2.55 11.9 5.1 14.45 8.25 14.45 8.98 14.45 9.67 14.3 10.31 14.05 9.18 12.64 8.5 10.85 8.5 8.9 8.5 6.84 9.26 4.96 10.5 3.52 9.81 3.22 9.05 3.05 8.25 3.05ZM 16.75 2.51C 15.51 2.51 14.36 2.87 13.38 3.48 14.76 4.81 15.61 6.68 15.61 8.75 15.61 10.91 14.67 12.85 13.19 14.2 14.21 14.88 15.43 15.29 16.75 15.29 20.28 15.29 23.14 12.43 23.14 8.9 23.14 5.37 20.28 2.51 16.75 2.51Z" fill="rgb(217,215,213)"></path>
 							</svg>Свадебные букеты</a>
 					</li>
-					<li class="dropdown">
+					<li class="">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<svg xmlns="http://www.w3.org/2000/svg" width="20px" height="17px" viewBox="0 0 20 17" style="">
 								<path d="M 9.81 16.36C 9.98 16.36 10.15 16.29 10.28 16.17 10.28 16.17 16.89 9.8 16.89 9.8 16.98 9.71 19.32 7.58 19.32 5.03 19.32 1.92 17.42 0.07 14.25 0.07 12.39 0.07 10.65 1.53 9.81 2.36 8.98 1.53 7.24 0.07 5.38 0.07 2.21 0.07 0.31 1.92 0.31 5.03 0.31 7.58 2.65 9.71 2.73 9.78 2.73 9.78 9.35 16.17 9.35 16.17 9.48 16.29 9.65 16.36 9.81 16.36Z" fill="rgb(217,215,213)"></path>
@@ -180,7 +187,7 @@
 			<div id="fullcarousel-example" data-interval="false" class="carousel slide col-md-9" data-ride="carousel">
 				<div class="carousel-inner">
 					<div class="item active">
-						<img src="img/buket1.jpg" alt="slide">
+						<div class="carousel-img-wrapper"><img src="media/buket1.jpg" alt="slide"></div>
 						<div class="slide-descr">
 							<h3>Закажи два букета <br>и третий получи <br><span> в подарок!</span></h3>
 							<p class="sl-text">Самые свежие цветы с самой быстрой и качественной доставкой соображения высшего порядка, а также рамки и место обучения. Самые свежие цветы с самой быстрой и качественной доставкой в тот же</p>
@@ -203,7 +210,7 @@
 								</svg>
 								<p class="action">акция
 									<br>действительна</p>
-								<p class="time">46 : 08 : 47 : 10</p>
+								<p class="time" id="time1"></p>
 								<p class="descr">
 									<span>дней</span>
 									<span>час.</span>
@@ -214,7 +221,7 @@
 						</div>
 					</div>
 					<div class="item">
-						<img src="img/buket2.jpg" alt="slide">
+						<div class="carousel-img-wrapper"><img src="media/buket2.jpg" alt="slide"></div>
 						<div class="slide-descr">
 							<h3>Закажи два букета и третий получи <br><span> в подарок!</span></h3>
 							<p class="sl-text">Самые свежие цветы с самой быстрой и качественной доставкой соображения высшего порядка, а также рамки и место обучения. Самые свежие цветы с самой быстрой и качественной доставкой в тот же</p>
@@ -233,7 +240,7 @@
 								</svg>
 								<p class="action">акция
 									<br>действительна</p>
-								<p class="time">46 : 08 : 47 : 10</p>
+								<p class="time" id="time2"></p>
 								<p class="descr">
 									<span>дней</span>
 									<span>час.</span>
@@ -247,7 +254,7 @@
 				<a class="right carousel-control" href="#fullcarousel-example" data-slide="next">
 
 				</a>
-				<a class="left carousel-control" href="#fullcarousel-example" data-slide="next">
+				<a class="left carousel-control" href="#fullcarousel-example" data-slide="prev">
 					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px" height="50px" viewBox="0 0 50 50">
 						<path d="M 25 49.5C 11.47 49.5 0.5 38.53 0.5 25 0.5 11.47 11.47 0.5 25 0.5 38.53 0.5 49.5 11.47 49.5 25 49.5 38.53 38.53 49.5 25 49.5Z" fill="#d9d7d6"></path>
 						<path d="M 25 8C 15.61 8 8 15.61 8 25 8 34.39 15.61 42 25 42 34.39 42 42 34.39 42 25 42 15.61 34.39 8 25 8Z" fill="#6d6d6d" class="control-bg"></path>
@@ -267,16 +274,24 @@
 			</li>
 		</ul>
 	</div>
+	
+	
+	
+	
+	
+	
+	
 	<div class="tovar-wrapper wrapper">
 		<div class="tovar container" id="tovar">
 			<div class="tovar-foto col-lg-4 clearfix">
-				<div class="tovar-foto-main" id="light">
-					<img src="img/main-pre.jpg" alt="" class="main" id="light"><a href="#light" class="view">увеличить<span>+</span></a><a href="#tovar" class="close-lb">закрыть</a>
+				<div class="tovar-foto-main">
+					<a class="main-foto-link" href="media/main-pre.jpg"><img src="media/main-pre.jpg" alt="" class="main" id="light"></a><a href="#light" onclick="$('.main-foto-link').lightBox();" class="view">увеличить<span>+</span></a><a href="#tovar" class="close-lb">закрыть</a>
 				</div>
 				<div class="tovar-foto-pre-wrap">
-					<img src="img/pre1.jpg" alt="" class="tovar-foto-pre">
-					<img src="img/pre2.jpg" alt="" class="tovar-foto-pre">
-					<img src="img/pre3.jpg" alt="" class="tovar-foto-pre">
+				
+					<img src="media/pre1.jpg" alt="" class="tovar-foto-pre1">
+					<img src="media/pre2.jpg" alt="" class="tovar-foto-pre2">
+					<img src="media/pre3.jpg" alt="" class="tovar-foto-pre3">
 				</div>
 			</div>
 
@@ -284,8 +299,8 @@
 				<h2 class="">Букет «Кремовое облако»</h2>
 				<div class="reviews  ">
 					<div class="fst">
-						<p class="rating"><span>Рейтинг покупателей:</span><span class="stars"> </span>
-						</p>
+						<p class="rating"><span>Рейтинг покупателей:</span></p><div class="stars"><div class="wrap"><div class="border-wrap"><div class="border-wrap"><div class="rating_3"><input type="hidden" name="val" value="3.75"/><input type="hidden" name="votes" value="5"/><input type="hidden" name="vote-id" value="3"/><input type="hidden" name="cat_id" value="2"/></div></div></div></div></div>
+						
 						<p class="sold">Уже купили: <span class="or">14 чел</span>
 						</p>
 					</div>
@@ -323,7 +338,7 @@
 					<div class="options-wrap clearfix">
 						<div class="select-wrap">
 							<p>Размер</p>
-							<select name="select-size" id="select-size">
+							<select name="select-size" class="dropdown" id="select-size">
 								<option value="lg">большой</option>
 								<option value="md">средний</option>
 								<option value="sm">маленький</option>
@@ -386,18 +401,10 @@
 					<div class="icon">%</div>
 					<p>скидка</p>
 				</div>
-				<img src="img/bouquet1.png" alt="Букет “Осенняя пора”">
+				<img src="media/bouquet1.png" alt="Букет “Осенняя пора”">
 				<h4>Букет “Осенняя пора”</h4>
 				<p class="prise">1599 руб.</p>
-				<div class="stars" id="stars">
-					<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="78.72" height="14" viewBox="0 0 78.72 14">
-						<path d="M75.286,9.014 L75.909,13.999 L71.361,11.866 L66.812,13.999 L67.435,9.014 L64.001,5.347 L68.935,4.399 L71.361,0.000 L73.787,4.399 L78.721,5.347 L75.286,9.014 Z" />
-						<path d="M59.909,13.999 L55.361,11.866 L50.812,13.999 L51.435,9.014 L48.001,5.347 L52.935,4.399 L55.361,0.000 L57.787,4.399 L62.721,5.347 L59.286,9.014 L59.909,13.999 Z" />
-						<path d="M43.909,13.999 L39.361,11.866 L34.812,13.999 L35.435,9.014 L32.001,5.347 L36.935,4.399 L39.361,0.000 L41.787,4.399 L46.721,5.347 L43.286,9.014 L43.909,13.999 Z" />
-						<path d="M27.909,13.999 L23.361,11.866 L18.812,13.999 L19.435,9.014 L16.001,5.347 L20.935,4.399 L23.361,0.000 L25.787,4.399 L30.721,5.347 L27.286,9.014 L27.909,13.999 Z" />
-						<path d="M11.910,13.999 L7.361,11.866 L2.812,13.999 L3.436,9.014 L0.001,5.347 L4.935,4.399 L7.361,0.000 L9.787,4.399 L14.721,5.347 L11.286,9.014 L11.910,13.999 Z" />
-					</svg>
-				</div>
+				<div class="stars"><div class="wrap"><div class="border-wrap"><div class="border-wrap"><div class="rating_3"><input type="hidden" name="val" value="3.75"/><input type="hidden" name="votes" value="5"/><input type="hidden" name="vote-id" value="3"/><input type="hidden" name="cat_id" value="2"/></div></div></div></div></div>
 				<ul class="text .clearfix">
 					<li>Размер: 60см, 25 шт.</li>
 					<li>Состав: роза оранжевого цвета</li>
@@ -464,10 +471,10 @@
 					</div>
 					<p>новинка</p>
 				</div>
-				<img src="img/bouquet2.png" alt="Букет “Осенняя пора-2”">
+				<img src="media/bouquet2.png" alt="Букет “Осенняя пора-2”">
 				<h4>Букет “Осенняя пора-2”</h4>
 				<p class="prise">1599 руб.</p>
-				<div class="stars"></div>
+				<div class="stars"><div class="wrap"><div class="border-wrap"><div class="border-wrap"><div class="rating_3"><input type="hidden" name="val" value="3.75"/><input type="hidden" name="votes" value="5"/><input type="hidden" name="vote-id" value="3"/><input type="hidden" name="cat_id" value="2"/></div></div></div></div></div>
 				<ul class="text">
 					<li>Размер: 60см, 25 шт.</li>
 					<li>Состав: роза насыщенного оранжевого цвета, бутоны плотные, с каемкой.</li>
@@ -502,10 +509,10 @@
 					</div>
 					<p>хит</p>
 				</div>
-				<img src="img/bouquet3.png" alt="Букет из кремовых роз">
+				<img src="media/bouquet3.png" alt="Букет из кремовых роз">
 				<h4>Букет из кремовых роз</h4>
 				<p class="prise">1599 руб.</p>
-				<div class="stars"></div>
+				<div class="stars"><div class="wrap"><div class="border-wrap"><div class="border-wrap"><div class="rating_3"><input type="hidden" name="val" value="3.75"/><input type="hidden" name="votes" value="5"/><input type="hidden" name="vote-id" value="3"/><input type="hidden" name="cat_id" value="2"/></div></div></div></div></div>
 				<ul class="text">
 					<li>Размер: 60см, 25 шт.</li>
 					<li>Состав: роза оранжевого цвета</li>
@@ -532,10 +539,10 @@
 		</div>
 		<div class="product-box">
 			<div class="pr-bg">
-				<img src="img/bouquet4.png" alt="Букет “Гербера”">
+				<img src="media/bouquet4.png" alt="Букет “Гербера”">
 				<h4>Букет “Гербера”</h4>
 				<p class="prise">1599 руб.</p>
-				<div class="stars"></div>
+				<div class="stars"><div class="wrap"><div class="border-wrap"><div class="border-wrap"><div class="rating_3"><input type="hidden" name="val" value="3.75"/><input type="hidden" name="votes" value="5"/><input type="hidden" name="vote-id" value="3"/><input type="hidden" name="cat_id" value="2"/></div></div></div></div></div>
 				<ul class="text">
 					<li>Размер: 60см, 25 шт.</li>
 					<li>Состав: роза насыщенного оранжевого цвета, бутоны плотные, с каемкой.</li>
@@ -729,13 +736,74 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-	<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-	<script src="owl-carousel/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript">
+window.jQuery || document.write('<script type="text/javascript" src="js/jquery-2.1.4.min.js"><\/script>');
+</script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>	
 	<script src="owl-carousel/owl.carousel.js"></script>
+	<script type="text/javascript" src="js/jquery.lightbox-0.5.pack.js"></script>
+
 	<script>
 		$('.stars').prepend($('#stars svg'));
+		$('.plus').click(function () {
+			$('.count').text( +$('.count').text()+1);
+		})
+		$('.minus').click(function () {
+			if (+$('.count').text()>1) $('.count').text( +$('.count').text()-1);
+		})
+		
+		$('img.tovar-foto-pre1').click(function(){
+			$('.tovar-foto-main img.main').attr({'src':'img/main-pre1.jpg'});
+			$('.tovar-foto-main .main-foto-link').attr({'href':'img/main-pre1.jpg'});
+			if ($('.tovar-foto-pre-wrap img').is('.act')) $('.tovar-foto-pre-wrap img.act').removeClass('act');
+			$('img.tovar-foto-pre1').addClass('act');
+			console.log(this);
+		})
+		$('img.tovar-foto-pre2').click(function(){
+			$('.tovar-foto-main img.main').attr({'src':'img/main-pre2.jpg'});
+			$('.tovar-foto-main .main-foto-link').attr({'href':'img/main-pre2.jpg'});
+			if ($('.tovar-foto-pre-wrap img').is('.act')) $('.tovar-foto-pre-wrap img.act').removeClass('act');
+			$('img.tovar-foto-pre2').addClass('act');
+		})
+		$('img.tovar-foto-pre3').click(function(){
+			$('.tovar-foto-main img.main').attr({'src':'img/main-pre3.jpg'});
+			$('.tovar-foto-main .main-foto-link').attr({'href':'img/main-pre3.jpg'});
+			if ($('.tovar-foto-pre-wrap img').is('.act')) $('.tovar-foto-pre-wrap img.act').removeClass('act');
+			$('img.tovar-foto-pre3').addClass('act');
+		})
+		$(window).resize(function() {
+			if ($(window).width()<=768)	$('.tovar-foto-main').height($('.tovar-foto-pre1').height()+$('.tovar-foto-pre2').height()+$('.tovar-foto-pre3').height()+10);
+		})
+		$(function() {
+			if ($(window).width()<=768)	$('.tovar-foto-main').height($('.tovar-foto-pre1').height()+$('.tovar-foto-pre2').height()+$('.tovar-foto-pre3').height()+10);
+		})
+		jQuery(function(){
+			$(".main-foto-link").lightBox();
+
+		});
+		$(function(){
+
+	$('.rating_3').rating({
+		fx: 'float',
+        image: 'img/stars.png',
+        loader: 'img/ajax-loader.gif',
+        minimal: 0.6,
+		url: 'rating.php',
+        callback: function(responce){
+            
+            this.vote_success.fadeOut(2000);
+            if(responce.msg) alert(responce.msg);
+        }
+	});
+})
+
 	</script>
+	
 	<script src="js/myJS.js"></script>
+	<script src="js/jquery.countdown.js"></script>
+	<script src="js/jquery.easydropdown.js"></script>
+	<script type="text/javascript" src="js/jquery.rating-2.0.min.js"></script>
 </body>
 
 </html>

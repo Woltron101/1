@@ -11,7 +11,7 @@
 	<link href="css/whhg.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" href="css/catalogue.css" />
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=cyrillic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/fonts.css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<!-- <link rel="icon" type="image/vnd.microsoft.icon" href=""> -->
 	<!--[if lt IE 9]>
@@ -21,13 +21,28 @@
 	<!-- Основные стили -->
 	<link rel="stylesheet" href="owl-carousel/owl.carousel.css">
 	<link rel="stylesheet" href="owl-carousel/owl.theme.css">
+		
+	<!-- bin/jquery.slider.min.css -->
+	<link rel="stylesheet" href="jslider/css/jslider.css" type="text/css">
+	<link rel="stylesheet" href="jslider/css/jslider.blue.css" type="text/css">
+	<link rel="stylesheet" href="jslider/css/jslider.plastic.css" type="text/css">
+	<link rel="stylesheet" href="jslider/css/jslider.round.css" type="text/css">
+	<link rel="stylesheet" href="jslider/css/jslider.round.plastic.css" type="text/css">
+  <!-- end -->
+
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+	
+	
 
 </head>
 
 <body>
 	<div class="container" id="w1170">
 		<div class="logo">
-			<img src="img/logo.png" alt="">
+			<a href="index.html">
+				<img src="img/logo.png" alt="">
+			</a>
 		</div>
 		<div class="row header brd">
 			<div class="col-md-12">
@@ -176,10 +191,10 @@
 					</li>
 				</ul>
 			</div>
-			<div id="fullcarousel-example" data-interval="false" class="carousel slide col-md-9" data-ride="carousel">
+						<div id="fullcarousel-example" data-interval="false" class="carousel slide col-md-9" data-ride="carousel">
 				<div class="carousel-inner">
 					<div class="item active">
-						<img src="img/buket1.jpg" alt="slide">
+						<div class="carousel-img-wrapper"><img src="media/buket1.jpg" alt="slide"></div>
 						<div class="slide-descr">
 							<h3>Закажи два букета <br>и третий получи <br><span> в подарок!</span></h3>
 							<p class="sl-text">Самые свежие цветы с самой быстрой и качественной доставкой соображения высшего порядка, а также рамки и место обучения. Самые свежие цветы с самой быстрой и качественной доставкой в тот же</p>
@@ -202,7 +217,7 @@
 								</svg>
 								<p class="action">акция
 									<br>действительна</p>
-								<p class="time">46 : 08 : 47 : 10</p>
+								<p class="time" id="time1"></p>
 								<p class="descr">
 									<span>дней</span>
 									<span>час.</span>
@@ -213,7 +228,7 @@
 						</div>
 					</div>
 					<div class="item">
-						<img src="img/buket2.jpg" alt="slide">
+						<div class="carousel-img-wrapper"><img src="media/buket2.jpg" alt="slide"></div>
 						<div class="slide-descr">
 							<h3>Закажи два букета и третий получи <br><span> в подарок!</span></h3>
 							<p class="sl-text">Самые свежие цветы с самой быстрой и качественной доставкой соображения высшего порядка, а также рамки и место обучения. Самые свежие цветы с самой быстрой и качественной доставкой в тот же</p>
@@ -232,7 +247,7 @@
 								</svg>
 								<p class="action">акция
 									<br>действительна</p>
-								<p class="time">46 : 08 : 47 : 10</p>
+								<p class="time" id="time2"></p>
 								<p class="descr">
 									<span>дней</span>
 									<span>час.</span>
@@ -246,7 +261,7 @@
 				<a class="right carousel-control" href="#fullcarousel-example" data-slide="next">
 
 				</a>
-				<a class="left carousel-control" href="#fullcarousel-example" data-slide="next">
+				<a class="left carousel-control" href="#fullcarousel-example" data-slide="prev">
 					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px" height="50px" viewBox="0 0 50 50">
 						<path d="M 25 49.5C 11.47 49.5 0.5 38.53 0.5 25 0.5 11.47 11.47 0.5 25 0.5 38.53 0.5 49.5 11.47 49.5 25 49.5 38.53 38.53 49.5 25 49.5Z" fill="#d9d7d6"></path>
 						<path d="M 25 8C 15.61 8 8 15.61 8 25 8 34.39 15.61 42 25 42 34.39 42 42 34.39 42 25 42 15.61 34.39 8 25 8Z" fill="#6d6d6d" class="control-bg"></path>
@@ -274,9 +289,37 @@
 						<div class="price">
 							<h3>Цена</h3>
 							<div class="price-change">
-								<input type="text" id="from" placeholder="500"> <span>-</span> 
-								<input type="text" id="to" placeholder="25000"> <span>руб.</span>
-								<div id="slider"></div>
+								<input type="text" id="from" placeholder="500" value="500"> <span>-</span> 
+								<input type="text" id="to" placeholder="25000" value="25000"> <span>руб.</span>
+								<div id="slider">
+
+								</div>
+								
+							<div class="layout-slider">
+								<input id="Slider3" type="slider" name="area" value="25;75" />
+							</div>
+							<script type="text/javascript" charset="utf-8">
+							$(document).ready(function() {
+							jQuery("#Slider3").slider({
+								from: 500,
+								to: 25000,
+								heterogeneity: ['20/1000', '40/5000', '60/10000', '80/15000'],
+								scale: [500, 1000, '5000', 10000, 15000, 25000],
+								limits: false,
+								step: 100,
+								dimension: '&nbsp;m<small>2</small>',
+								skin: "round_plastic",
+								onstatechange: function(){
+$('#from').val($("#Slider3").slider("value").substring(0,$("#Slider3").slider("value").indexOf(";")));								$('#to').val($("#Slider3").slider("value").substring($("#Slider3").slider("value").indexOf(";")+1))
+$('#from, #to').change(function(){
+  $("#Slider3").slider("value", +$('#from').val(), +$('#to').val());
+});
+  								}
+							});
+$("#Slider3").slider("value", +$('#from').attr('placeholder'), +$('#to').attr('placeholder'));
+							})
+							</script>
+
 							</div>
 
 						</div>
@@ -286,56 +329,56 @@
 								<li>
 									<input type="checkbox" name="composition" class="chbox" value="roses" id="roses">
 									<label for="roses"><span class="lb-text">Розы</span>
-										<div class="check-wrap">
+										<span class="check-wrap">
 											<svg xmlns="http://www.w3.org/2000/svg" width="10px" height="12px" viewBox="0 0 415.582 415.582" xml:space="preserve">
 												<g>
 													<path d="M411.47,96.426l-46.319-46.32c-5.482-5.482-14.371-5.482-19.853,0L152.348,243.058l-82.066-82.064   c-5.48-5.482-14.37-5.482-19.851,0l-46.319,46.32c-5.482,5.481-5.482,14.37,0,19.852l138.311,138.31   c2.741,2.742,6.334,4.112,9.926,4.112c3.593,0,7.186-1.37,9.926-4.112L411.47,116.277c2.633-2.632,4.111-6.203,4.111-9.925   C415.582,102.628,414.103,99.059,411.47,96.426z" />
 												</g>
 
 											</svg>
-										</div>
+										</span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="composition" class="chbox" value="lilies" id="lilies">
 									<label for="lilies"><span class="lb-text">Лилии</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="composition" class="chbox" value="chrysanthemums" id="chrysanthemums">
 									<label for="chrysanthemums"><span class="lb-text">Хризантемы</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="composition" class="chbox" value="gerbera" id="gerbera">
 									<label for="gerbera"><span class="lb-text">Герберы</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="composition" class="chbox" value="exotica" id="exotica">
 									<label for="exotica"><span class="lb-text">Экзотика</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="composition" class="chbox" value="seasonal-flowers" id="seasonal-flowers">
 									<label for="seasonal-flowers"><span class="lb-text">Сезонные цветы</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="composition" class="chbox" value="alstromerias" id="alstromerias">
 									<label for="alstromerias"><span class="lb-text">Альстромерии</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="composition" class="chbox" value="mixed-bouquet" id="mixed-bouquet">
 									<label for="mixed-bouquet"><span class="lb-text">Сборный букет</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 							</ul>
@@ -346,61 +389,61 @@
 								<li>
 									<input type="checkbox" name="color" class="chbox" value="green" id="green">
 									<label for="green"><span class="lb-text">Зелёный</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="color" class="chbox" value="orange" id="orange">
 									<label for="orange"><span class="lb-text">Оранжевый</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="color" class="chbox" value="red" id="red">
 									<label for="red"><span class="lb-text">Красный</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="color" class="chbox" value="white" id="white">
 									<label for="white"><span class="lb-text">Белый</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="color" class="chbox" value="yellow" id="yellow">
 									<label for="yellow"><span class="lb-text">Желтый</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="color" class="chbox" value="pinc" id="pinc">
 									<label for="pinc"><span class="lb-text">Розовый</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="color" class="chbox" value="cream" id="cream">
 									<label for="cream"><span class="lb-text">Кремовый</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="color" class="chbox" value="purple" id="purple">
 									<label for="purple"><span class="lb-text">Фиолетовый</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="color" class="chbox" value="blue" id="blue">
 									<label for="blue"><span class="lb-text">Голубой</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="color" class="chbox" value="varicolored" id="varicolored">
 									<label for="varicolored"><span class="lb-text">Разноцветный</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 							</ul>
@@ -411,19 +454,19 @@
 								<li>
 									<input type="checkbox" name="size" class="chbox" value="lg" id="lg">
 									<label for="lg"><span class="lb-text">большой (50 - 60см)</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="size" class="chbox" value="md" id="md">
 									<label for="md"><span class="lb-text">средний (40 - 50см)</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="size" class="chbox" value="sm" id="sm">
 									<label for="sm"><span class="lb-text">маленький (30 - 40см)</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 							</ul>
@@ -434,37 +477,37 @@
 								<li>
 									<input type="checkbox" name="whom" class="chbox" value="flowers-woman" id="flowers-woman">
 									<label for="flowers-woman"><span class="lb-text">Цветы женщине</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="whom" class="chbox" value="flower-man" id="flower-man">
 									<label for="flower-man"><span class="lb-text">Цветы мужчине</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="whom" class="chbox" value="flowers-favorite" id="flowers-favorite">
 									<label for="flowers-favorite"><span class="lb-text">Цветы любимой</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="whom" class="chbox" value="mom-Flowers" id="mom-Flowers">
 									<label for="mom-Flowers"><span class="lb-text">Цветы маме</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="whom" class="chbox" value="flower-child" id="flower-child">
 									<label for="flower-child"><span class="lb-text">Цветы ребенку</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="whom" class="chbox" value="business-partners" id="business-partners">
 									<label for="business-partners"><span class="lb-text">Деловому партнеру</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 							</ul>
@@ -475,31 +518,31 @@
 								<li>
 									<input type="checkbox" name="why" class="chbox" value="birthday" id="birthday">
 									<label for="birthday"><span class="lb-text">День рождения</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="why" class="chbox" value="jubilee" id="jubilee">
 									<label for="jubilee"><span class="lb-text">Юбилей</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="why" class="chbox" value="triumph" id="triumph">
 									<label for="triumph"><span class="lb-text">Торжество</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="why" class="chbox" value="wedding" id="wedding">
 									<label for="wedding"><span class="lb-text">Свадьба</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="why" class="chbox" value="concert" id="concert">
 									<label for="concert"><span class="lb-text">Концерт</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 							</ul>
@@ -510,13 +553,13 @@
 								<li>
 									<input type="checkbox" name="from" class="chbox" value="podolsk" id="podolsk">
 									<label for="podolsk"><span class="lb-text">подольск</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 								<li>
 									<input type="checkbox" name="from" class="chbox" value="russia" id="russia">
 									<label for="russia"><span class="lb-text">россия</span>
-										<div class="check-wrap"></div>
+										<span class="check-wrap"></span>
 									</label>
 								</li>
 							</ul>
@@ -528,24 +571,24 @@
 						<form action="#" class="view-form">
 							<input type="radio" id="vw1" name="view" class="view" value="vw1">
 							<label for="vw1">
-								<div class="blocks"></div>
-								<div class="blocks"></div>
-								<div class="blocks "></div>
-								<div class="blocks cl"></div>
-								<div class="blocks"></div>
-								<div class="blocks"></div>
-								<div class="blocks cl"></div>
-								<div class="blocks"></div>
-								<div class="blocks"></div>
+								<span class="blocks"></span>
+								<span class="blocks"></span>
+								<span class="blocks "></span>
+								<span class="blocks cl"></span>
+								<span class="blocks"></span>
+								<span class="blocks"></span>
+								<span class="blocks cl"></span>
+								<span class="blocks"></span>
+								<span class="blocks"></span>
 							</label>
 							<input type="radio" id="vw2" name="view" class="view" value="vw2">
 							<label for="vw2">
-								<div class="table1"></div>
-								<div class="table2"></div>
-								<div class="table1"></div>
-								<div class="table2"></div>
-								<div class="table1"></div>
-								<div class="table2"></div>
+								<span class="table1"></span>
+								<span class="table2"></span>
+								<span class="table1"></span>
+								<span class="table2"></span>
+								<span class="table1"></span>
+								<span class="table2"></span>
 							</label>
 						</form>
 						<form action="#" class="sort">
@@ -565,18 +608,10 @@
 									<div class="icon">%</div>
 									<p>скидка</p>
 								</div>
-								<img src="img/bouquet1.png" alt="Букет “Осенняя пора”">
+								<img src="media/bouquet1.png" alt="Букет “Осенняя пора”">
 								<h4>Букет “Осенняя пора”</h4>
 								<p class="prise">1599 руб.</p>
-								<div class="stars" id="stars">
-									<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="78.72" height="14" viewBox="0 0 78.72 14">
-										<path d="M75.286,9.014 L75.909,13.999 L71.361,11.866 L66.812,13.999 L67.435,9.014 L64.001,5.347 L68.935,4.399 L71.361,0.000 L73.787,4.399 L78.721,5.347 L75.286,9.014 Z" />
-										<path d="M59.909,13.999 L55.361,11.866 L50.812,13.999 L51.435,9.014 L48.001,5.347 L52.935,4.399 L55.361,0.000 L57.787,4.399 L62.721,5.347 L59.286,9.014 L59.909,13.999 Z" />
-										<path d="M43.909,13.999 L39.361,11.866 L34.812,13.999 L35.435,9.014 L32.001,5.347 L36.935,4.399 L39.361,0.000 L41.787,4.399 L46.721,5.347 L43.286,9.014 L43.909,13.999 Z" />
-										<path d="M27.909,13.999 L23.361,11.866 L18.812,13.999 L19.435,9.014 L16.001,5.347 L20.935,4.399 L23.361,0.000 L25.787,4.399 L30.721,5.347 L27.286,9.014 L27.909,13.999 Z" />
-										<path d="M11.910,13.999 L7.361,11.866 L2.812,13.999 L3.436,9.014 L0.001,5.347 L4.935,4.399 L7.361,0.000 L9.787,4.399 L14.721,5.347 L11.286,9.014 L11.910,13.999 Z" />
-									</svg>
-								</div>
+								<div class="stars"><div class="wrap"><div class="border-wrap"><div class="border-wrap"><div class="rating_3"><input type="hidden" name="val" value="3.75"/><input type="hidden" name="votes" value="5"/><input type="hidden" name="vote-id" value="3"/><input type="hidden" name="cat_id" value="2"/></div></div></div></div></div>
 								<ul class="text .clearfix">
 									<li>Размер: 60см, 25 шт.</li>
 									<li>Состав: роза оранжевого цвета</li>
@@ -643,10 +678,10 @@
 									</div>
 									<p>новинка</p>
 								</div>
-								<img src="img/bouquet2.png" alt="Букет “Осенняя пора-2”">
+								<img src="media/bouquet2.png" alt="Букет “Осенняя пора-2”">
 								<h4>Букет “Осенняя пора-2”</h4>
 								<p class="prise">1599 руб.</p>
-								<div class="stars"></div>
+								<div class="stars"><div class="wrap"><div class="border-wrap"><div class="border-wrap"><div class="rating_3"><input type="hidden" name="val" value="3.75"/><input type="hidden" name="votes" value="5"/><input type="hidden" name="vote-id" value="3"/><input type="hidden" name="cat_id" value="2"/></div></div></div></div></div>
 								<ul class="text">
 									<li>Размер: 60см, 25 шт.</li>
 									<li>Состав: роза насыщенного оранжевого цвета, бутоны плотные, с каемкой.</li>
@@ -669,10 +704,10 @@
 									</div>
 									<p>хит</p>
 								</div>
-								<img src="img/bouquet3.png" alt="Букет из кремовых роз">
+								<img src="media/bouquet3.png" alt="Букет из кремовых роз">
 								<h4>Букет из кремовых роз</h4>
 								<p class="prise">1599 руб.</p>
-								<div class="stars"></div>
+								<div class="stars"><div class="wrap"><div class="border-wrap"><div class="border-wrap"><div class="rating_3"><input type="hidden" name="val" value="3.75"/><input type="hidden" name="votes" value="5"/><input type="hidden" name="vote-id" value="3"/><input type="hidden" name="cat_id" value="2"/></div></div></div></div></div>
 								<ul class="text">
 									<li>Размер: 60см, 25 шт.</li>
 									<li>Состав: роза оранжевого цвета</li>
@@ -691,12 +726,10 @@
 									<div class="icon">%</div>
 									<p>скидка</p>
 								</div>
-								<img src="img/bouquet1.png" alt="Букет “Осенняя пора”">
+								<img src="media/bouquet1.png" alt="Букет “Осенняя пора”">
 								<h4>Букет “Осенняя пора”</h4>
 								<p class="prise">1599 руб.</p>
-								<div class="stars">
-
-								</div>
+								<div class="stars"><div class="wrap"><div class="border-wrap"><div class="border-wrap"><div class="rating_3"><input type="hidden" name="val" value="3.75"/><input type="hidden" name="votes" value="5"/><input type="hidden" name="vote-id" value="3"/><input type="hidden" name="cat_id" value="2"/></div></div></div></div></div>
 								<ul class="text .clearfix">
 									<li>Размер: 60см, 25 шт.</li>
 									<li>Состав: роза оранжевого цвета</li>
@@ -715,10 +748,10 @@
 									<div class="icon"></div>
 									<p>новинка</p>
 								</div>
-								<img src="img/bouquet2.png" alt="Букет “Осенняя пора-2”">
+								<img src="media/bouquet2.png" alt="Букет “Осенняя пора-2”">
 								<h4>Букет “Осенняя пора-2”</h4>
 								<p class="prise">1599 руб.</p>
-								<div class="stars"></div>
+								<div class="stars"><div class="wrap"><div class="border-wrap"><div class="border-wrap"><div class="rating_3"><input type="hidden" name="val" value="3.75"/><input type="hidden" name="votes" value="5"/><input type="hidden" name="vote-id" value="3"/><input type="hidden" name="cat_id" value="2"/></div></div></div></div></div>
 								<ul class="text">
 									<li>Размер: 60см, 25 шт.</li>
 									<li>Состав: роза насыщенного оранжевого цвета, бутоны плотные, с каемкой.</li>
@@ -737,10 +770,10 @@
 									<div class="icon"></div>
 									<p>хит</p>
 								</div>
-								<img src="img/bouquet3.png" alt="Букет из кремовых роз">
+								<img src="media/bouquet3.png" alt="Букет из кремовых роз">
 								<h4>Букет из кремовых роз</h4>
 								<p class="prise">1599 руб.</p>
-								<div class="stars"></div>
+								<div class="stars"><div class="wrap"><div class="border-wrap"><div class="border-wrap"><div class="rating_3"><input type="hidden" name="val" value="3.75"/><input type="hidden" name="votes" value="5"/><input type="hidden" name="vote-id" value="3"/><input type="hidden" name="cat_id" value="2"/></div></div></div></div></div>
 								<ul class="text">
 									<li>Размер: 60см, 25 шт.</li>
 									<li>Состав: роза оранжевого цвета</li>
@@ -759,12 +792,10 @@
 									<div class="icon">%</div>
 									<p>скидка</p>
 								</div>
-								<img src="img/bouquet1.png" alt="Букет “Осенняя пора”">
+								<img src="media/bouquet1.png" alt="Букет “Осенняя пора”">
 								<h4>Букет “Осенняя пора”</h4>
 								<p class="prise">1599 руб.</p>
-								<div class="stars">
-
-								</div>
+								<div class="stars"><div class="wrap"><div class="border-wrap"><div class="border-wrap"><div class="rating_3"><input type="hidden" name="val" value="3.75"/><input type="hidden" name="votes" value="5"/><input type="hidden" name="vote-id" value="3"/><input type="hidden" name="cat_id" value="2"/></div></div></div></div></div>
 								<ul class="text .clearfix">
 									<li>Размер: 60см, 25 шт.</li>
 									<li>Состав: роза оранжевого цвета</li>
@@ -783,10 +814,10 @@
 									<div class="icon"></div>
 									<p>новинка</p>
 								</div>
-								<img src="img/bouquet2.png" alt="Букет “Осенняя пора-2”">
+								<img src="media/bouquet2.png" alt="Букет “Осенняя пора-2”">
 								<h4>Букет “Осенняя пора-2”</h4>
 								<p class="prise">1599 руб.</p>
-								<div class="stars"></div>
+								<div class="stars"><div class="wrap"><div class="border-wrap"><div class="border-wrap"><div class="rating_3"><input type="hidden" name="val" value="3.75"/><input type="hidden" name="votes" value="5"/><input type="hidden" name="vote-id" value="3"/><input type="hidden" name="cat_id" value="2"/></div></div></div></div></div>
 								<ul class="text">
 									<li>Размер: 60см, 25 шт.</li>
 									<li>Состав: роза насыщенного оранжевого цвета, бутоны плотные, с каемкой.</li>
@@ -805,10 +836,10 @@
 									<div class="icon"></div>
 									<p>хит</p>
 								</div>
-								<img src="img/bouquet3.png" alt="Букет из кремовых роз">
+								<img src="media/bouquet3.png" alt="Букет из кремовых роз">
 								<h4>Букет из кремовых роз</h4>
 								<p class="prise">1599 руб.</p>
-								<div class="stars"></div>
+								<div class="stars"><div class="wrap"><div class="border-wrap"><div class="border-wrap"><div class="rating_3"><input type="hidden" name="val" value="3.75"/><input type="hidden" name="votes" value="5"/><input type="hidden" name="vote-id" value="3"/><input type="hidden" name="cat_id" value="2"/></div></div></div></div></div>
 								<ul class="text">
 									<li>Размер: 60см, 25 шт.</li>
 									<li>Состав: роза оранжевого цвета</li>
@@ -827,12 +858,10 @@
 									<div class="icon">%</div>
 									<p>скидка</p>
 								</div>
-								<img src="img/bouquet1.png" alt="Букет “Осенняя пора”">
+								<img src="media/bouquet1.png" alt="Букет “Осенняя пора”">
 								<h4>Букет “Осенняя пора”</h4>
 								<p class="prise">1599 руб.</p>
-								<div class="stars">
-
-								</div>
+								<div class="stars"><div class="wrap"><div class="border-wrap"><div class="border-wrap"><div class="rating_3"><input type="hidden" name="val" value="3.75"/><input type="hidden" name="votes" value="5"/><input type="hidden" name="vote-id" value="3"/><input type="hidden" name="cat_id" value="2"/></div></div></div></div></div>
 								<ul class="text .clearfix">
 									<li>Размер: 60см, 25 шт.</li>
 									<li>Состав: роза оранжевого цвета</li>
@@ -851,10 +880,10 @@
 									<div class="icon"></div>
 									<p>новинка</p>
 								</div>
-								<img src="img/bouquet2.png" alt="Букет “Осенняя пора-2”">
+								<img src="media/bouquet2.png" alt="Букет “Осенняя пора-2”">
 								<h4>Букет “Осенняя пора-2”</h4>
 								<p class="prise">1599 руб.</p>
-								<div class="stars"></div>
+								<div class="stars"><div class="wrap"><div class="border-wrap"><div class="border-wrap"><div class="rating_3"><input type="hidden" name="val" value="3.75"/><input type="hidden" name="votes" value="5"/><input type="hidden" name="vote-id" value="3"/><input type="hidden" name="cat_id" value="2"/></div></div></div></div></div>
 								<ul class="text">
 									<li>Размер: 60см, 25 шт.</li>
 									<li>Состав: роза насыщенного оранжевого цвета, бутоны плотные, с каемкой.</li>
@@ -873,10 +902,10 @@
 									<div class="icon"></div>
 									<p>хит</p>
 								</div>
-								<img src="img/bouquet3.png" alt="Букет из кремовых роз">
+								<img src="media/bouquet3.png" alt="Букет из кремовых роз">
 								<h4>Букет из кремовых роз</h4>
 								<p class="prise">1599 руб.</p>
-								<div class="stars"></div>
+								<div class="stars"><div class="wrap"><div class="border-wrap"><div class="border-wrap"><div class="rating_3"><input type="hidden" name="val" value="3.75"/><input type="hidden" name="votes" value="5"/><input type="hidden" name="vote-id" value="3"/><input type="hidden" name="cat_id" value="2"/></div></div></div></div></div>
 								<ul class="text">
 									<li>Размер: 60см, 25 шт.</li>
 									<li>Состав: роза оранжевого цвета</li>
@@ -1079,14 +1108,61 @@
 	<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 	<script src="owl-carousel/owl.carousel.js"></script>
-	<script src="js/jquery-ui.min.js."></script>
+<!--	<script src="js/jquery-ui.min.js."></script>-->
 	<script>
+//			$(function() {
+//				$("#slider").slider({
+//					range: true,
+//					min: 500,
+//					max: 25000,
+//					values: [500, 25000],
+//					slide: function(event, ui) {
+//						$('#from').val($("#slider").slider("values", 0));
+//						$('#to').val($("#slider").slider("values", 1));
+//					}
+//				});
+//				$('#from').val($("#slider").slider("values", 0));
+//				$('#to').val($("#slider").slider("values", 1));
+//				$('#from').change(function() {
+//					$("#slider").slider("values", 0, $('#from').val())
+//				})
+//
+//				$('#to').change(function() {
+//					$("#slider").slider("values", 1, $('#to').val())
+//				})
+//
+//			});
+//		$('#from').val($("#Slider3").slider("value").substring(0, $("#Slider3").slider("value").indexOf(";")));								$('#to').val($("#Slider3").slider("value").substring($("#Slider3").slider("value").indexOf(";")+1));
+		
 		$('.stars').prepend($('#stars svg'));
 	    $('a.cart-btn').prepend($('a#cart-btn svg'));
 	    $('.new>.icon').prepend($('#new>.icon svg'));
 	    $('.hit>.icon').prepend($('#hit>.icon svg'));
+		$(function(){
+
+	$('.rating_3').rating({
+		fx: 'float',
+        image: 'img/stars.png',
+        loader: 'img/ajax-loader.gif',
+        minimal: 0.6,
+		url: 'rating.php',
+        callback: function(responce){
+            
+            this.vote_success.fadeOut(2000);
+            if(responce.msg) alert(responce.msg);
+        }
+	});
+})
 	</script>
 	<script src="js/myJS.js"></script>
+	<script src="js/jquery.countdown.js"></script>
+	<script type="text/javascript" src="jslider/js/jshashtable-2.1_src.js"></script>
+	<script type="text/javascript" src="jslider/js/jquery.numberformatter-1.2.3.js"></script>
+	<script type="text/javascript" src="jslider/js/tmpl.js"></script>
+	<script type="text/javascript" src="jslider/js/jquery.dependClass-0.1.js"></script>
+	<script type="text/javascript" src="jslider/js/draggable-0.1.js"></script>
+	<script type="text/javascript" src="jslider/js/jquery.slider.js"></script>
+	<script type="text/javascript" src="js/jquery.rating-2.0.min.js"></script>
 </body>
 
 </html>

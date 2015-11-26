@@ -47,7 +47,7 @@ body {
 		padding: 3px 5px;
 		background-color: @or;
 		color: #fff;
-		&: hover {
+		&:hover {
 			background-color: @dor;
 
 		}
@@ -76,7 +76,7 @@ ul.login {
 			font-family: Arial;
 			font-size: 15px;
 			font-weight: 400;
-			&: hover, &: active, &: focus {
+			&:hover, &:active, &:focus {
 				color: @or;
 
 			}
@@ -98,8 +98,8 @@ h1 {
 	content: '';
 	display: block;
 	width: 100%;
-	-webkit-border-image: url(img/border.png) 0 0 10 0 repeat;
-	border-image: url(img/border.png) 0 0 10 0 repeat;
+//	-webkit-border-image: url(img/border.png) 0 0 10 0 repeat;
+//	border-image: url(img/border.png) 0 0 10 0 repeat;
 }
 hr {
 	clear: both;
@@ -126,7 +126,7 @@ hr {
 	border-bottom: 1px dotted black;
 	li {
 		margin-right: 20px;
-		&: last-child: : after {
+		&:last-child::after {
 			display: none;
 		}
 		&::after {
@@ -147,7 +147,7 @@ hr {
 			vertical-align: middle;
 			color: black;
 			padding: 0 19px;
-			&: hover, &: active, &: focus {
+			&:hover, &:active, &:focus {
 				color: @bl;
 				background-color: transparent;
 			}
@@ -162,7 +162,7 @@ hr {
 		right: 4%;
 		cursor: pointer;
 		z-index: 111;
-		&: hover {
+		&:hover {
 			background-color: @dor;
 
 		}
@@ -195,7 +195,7 @@ hr {
 	text-transform: uppercase;
 	padding: 10px 20px;
 	margin: -1px 0 0 -5px;
-	&: hover {
+	&:hover {
 		background-color: @dor;
 	}
 }
@@ -217,7 +217,7 @@ hr {
 		background: #000;
 		float: left;
 		margin: 2px 0 0 5px;
-		&: hover {
+		&:hover {
 			background-color: @or;
 		}
 		svg {
@@ -245,7 +245,8 @@ hr {
 		list-style-type: none;
 		padding: 0;
 		border-bottom: 1px solid #d9d7d6;
-		&: last-child {
+		position: relative !important;
+		&:last-child {
 			border-bottom: 0;
 			padding-bottom: 10px;
 		}
@@ -266,7 +267,7 @@ hr {
 			font-weight: 400;
 			display: block;
 			padding-left: 60px;
-			&: hover, &: active, &: focus {
+			&:hover, &:active, &:focus {
 				font-weight: bold;
 				text-decoration: none;
 				background-color: #f6f5f4;
@@ -306,9 +307,9 @@ h3.l-m-header {
 	margin: 0;
 	display: block;
 	position: relative;
-	&: hover {
+	&:hover {
 		background-color: @dbl;
-		&: : after {
+		&::after {
 			border-top-color: @dbl;
 		}
 	}
@@ -319,7 +320,7 @@ h3.l-m-header {
 		bottom: -14px;
 		border: 7px solid transparent;
 		border-top: 7px solid #3ca4a4;
-		&: hover {
+		&:hover {
 			border-color: @dbl;
 		}
 	}
@@ -340,14 +341,14 @@ div.menu-slider {
 .dropdown-menu {
 	position: absolute;
 	left: 100%;
-	top: -6px;
+	top:0;
 	border: 0;
 	margin: 0;
 	padding: 0;
 	-webkit-border-radius: 0;
 	border-radius: 0;
 	li {
-		&: last-child {
+		&:last-child {
 			padding-bottom: 0px;
 		}
 		&:first-child {
@@ -357,14 +358,14 @@ div.menu-slider {
 	li a {
 		padding-left: 30px;
 		margin: 0;
-		height: 40px;
+		height: 38px;
 		width: 270px;
 		color: black;
 		font-family: @gp;
 		font-size: 14px;
 		font-weight: 400;
 		text-transform: none;
-		&: hover, &: active, &: focus {
+		&:hover, &:active, &:focus {
 			font-weight: bold;
 			background-color: #d9d7d6;
 		}
@@ -372,10 +373,18 @@ div.menu-slider {
 }
 #fullcarousel-example {
 	.item {
-		img {
+		.carousel-img-wrapper {
 			float: left;
 			margin-right: 29px;
-			width: 58%;
+			width: 58%;  
+			position: relative;
+			overflow: hidden;
+			height: 375px;
+		}
+		img {
+			position: absolute;
+			left: 50%;  
+			transform: translateX(-50%);
 		}
 		h3 {
 			border-bottom: 1px dotted #c6baaf;
@@ -386,6 +395,9 @@ div.menu-slider {
 			margin: 0 0 15px 0;
 			padding: 25px 0 19px;
 			line-height: 29px;
+			span {
+				color: #e84b27;
+			}
 		}
 		p.sl-text {
 			font-family: Arial;
@@ -394,9 +406,6 @@ div.menu-slider {
 			font-weight: 400;
 			line-height: 20px;
 			margin-bottom: 15px;
-		}
-		span {
-			color: #e84b27;
 		}
 		button {
 			width: 140px;
@@ -409,7 +418,7 @@ div.menu-slider {
 			font-size: 12px;
 			border: 0;
 			margin-bottom: 10px;
-			&: hover {
+			&:hover {
 				background-color: @dor;
 			}
 		}
@@ -445,7 +454,7 @@ div.menu-slider {
 		left: 55%;
 	}
 	a.right {
-		right: -4%;
+		right: 0%;
 		transform: rotate(180deg) translateY(50%);
 	}
 	a.left,
@@ -464,7 +473,7 @@ div.menu-slider {
 			fill: #6d6d6d !important;
 		}
 	}
-	.timer {
+	.timer {		
 		position: absolute;
 		bottom: 0;
 		background-color: #f6f5f4;
@@ -497,7 +506,46 @@ div.menu-slider {
 			font-size: 22px;
 			font-weight: 700;
 			float: right;
-			margin: 5px 16px 1px 1px;
+			margin: 4px 19px 1px 1px;			
+			span span.position{
+				display: inline-block;
+				height: 14px;
+				position: relative;
+				width: 10px;
+				color: black !important;
+				top: -10px;
+			}
+
+			.digit{
+				position:absolute;
+				display:block;
+				text-align:center
+			}
+			.countDiv{
+				display:inline-block;
+				width:16px;
+				height:14px;
+				position:relative;
+				margin: 0 -2px 0 3px;
+				top: -10px;
+			}
+
+			.countDiv:before,
+			.countDiv:after{
+				position:absolute;
+				width:3px;
+				height:3px;
+				background-color:#444;
+				border-radius:50%;
+				left:50%;
+				margin-left:-3px;
+				top:0.5em;
+				content:'';
+			}
+
+			.countDiv:after{
+				top:0.9em;
+			}
 		}
 		.descr {
 			font-family: @os;
@@ -524,7 +572,7 @@ div.menu-slider {
 		clear: both;
 		cursor: pointer;
 		padding-left: 40px;
-		&: hover {
+		&:hover {
 			color: @or;
 			svg {
 				border-color: @or;
@@ -561,8 +609,12 @@ div.menu-slider {
 	width: 100%;
 	background-color: #f6f5f4;
 }
+//.container.center {
+//	padding: 0 15px;
+//}
 .bouquet {
 	max-width: 1200px;
+	min-width: 320px;
 	background-color: #f6f5f4;
 	position: relative;
 	margin: 0 auto;
@@ -595,10 +647,10 @@ div.menu-slider {
 		width: 50px;
 		position: absolute;
 		top: 40%;
-		right: -1%;
-		-webkit-transform: rotate(80deg);
-		-ms-transform: rotate(800deg);
-		transform: rotate(180deg);
+		left: 0%;
+		-webkit-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		transform: rotate(0deg);
 		color: transparent;
 		path.control-bg {
 			fill: #fff !important;
@@ -610,12 +662,19 @@ div.menu-slider {
 		}
 	}
 	.owl-next {
-		.owl-prev;
-		left: -1%;
-		-webkit-transform: rotate(0deg);
-		-ms-transform: rotate(0deg);
-		transform: rotate(0deg);
-		&: hover {
+		height: 50px;
+		width: 50px;
+		position: absolute;
+		top: 40%;		
+		right: 0%;
+		-webkit-transform: rotate(180deg);
+		-ms-transform: rotate(180deg);
+		transform: rotate(180deg);
+		color: transparent;
+		path.control-bg {
+			fill: #fff !important;
+		}
+		&:hover {
 			path.control-bg {
 				fill: #6d6d6d !important;
 			}
@@ -647,6 +706,7 @@ div.menu-slider {
 		float: right;
 		margin: 8px 4px 0 0;
 		letter-spacing: -0.5px;
+		
 		svg path {
 			fill: @or !important;
 		}
@@ -654,7 +714,7 @@ div.menu-slider {
 			fill: #dadada !important;
 		}
 		svg {
-			path: hover {
+			path:hover {
 				fill: @or !important;
 			}
 			path:hover+path {
@@ -697,7 +757,7 @@ div.menu-slider {
 		position: absolute;
 		bottom: 0;
 		text-align: center;
-		&: hover {
+		&:hover {
 			background-color: @dor;
 		}
 		&:hover {
@@ -720,7 +780,7 @@ div.menu-slider {
 		bottom: 0;
 		left: 130px;
 		text-align: center;
-		&: hover {
+		&:hover {
 			background-color: #aaa;
 		}
 		&:hover {
@@ -739,7 +799,7 @@ div.menu-slider {
 		right: 0;
 		text-align: center;
 		font-size: 25px;
-		&: hover {
+		&:hover {
 			background-color: @dbl;
 		}
 		svg path {
@@ -776,7 +836,7 @@ div.menu-slider {
 	.discount {
 		.icon {
 			background-color: #4b4b4b;
-			&: hover {
+			&:hover {
 				background-color: #393939;
 			}
 		}
@@ -790,8 +850,8 @@ div.menu-slider {
 			}
 		}
 		.icon {
-			background: @bl url(../img/lap.png) 50% 50% no-repeat;
-			&: hover {
+			background: @bl;
+			&:hover {
 				background-color: @dbl;
 			}
 		}
@@ -799,12 +859,19 @@ div.menu-slider {
 	.hit {
 		.icon {
 			background-color: @or;
-			&: hover {
+			&:hover {
 				background-color: @dor;
 			}
 		}
 	}
 }
+.vote-block {
+			position: relative;
+			.vote-active {
+				position: absolute;
+				top: 0;
+			}
+		}
 .pr-bg {
 	border: 1px solid #dddcdb;
 	background-color: #fff;
@@ -895,7 +962,7 @@ div.owl-item {
 		text-transform: uppercase;
 		background-color: @or;
 		padding: 5px 10px;
-		&: hover {
+		&:hover {
 			background-color: @dor;
 
 		}
@@ -907,7 +974,7 @@ div.owl-item {
 	margin-left: 80px;
 	padding-bottom: 14px;
 	border-bottom: 1px dotted #7e7c7b;
-	&: last-child {
+	&:last-child {
 		border: 0;
 	}
 	.foto {
@@ -920,6 +987,9 @@ div.owl-item {
 		font-weight: 400;
 		margin-bottom: 3px;
 		margin: 23px 0 6px 0;
+		a {
+			text-decoration: none;
+		}
 	}
 	.te {
 		color: #7e7c7b;
@@ -975,7 +1045,7 @@ div.owl-item {
 			font-size: 14px;
 			font-weight: 400;
 			text-transform: uppercase;
-			&: hover {
+			&:hover {
 				background-color: @dor;
 			}
 		}
@@ -1116,7 +1186,7 @@ div.owl-item {
 	li {
 		margin: 0;
 		padding: 0;
-		&: last-child a {
+		&:last-child a {
 			border-bottom: 1px solid #ccc;
 		}
 	}
@@ -1151,7 +1221,7 @@ div.owl-item {
 		}
 		span {
 			color: #fff;
-			font-family: "Gotham Pro";
+			font-family: @gp;
 			font-size: 14px;
 			font-weight: 500;
 			text-transform: uppercase;
@@ -1166,11 +1236,18 @@ div.owl-item {
 		left: 30px !important;
 	}
 }
+.vote-success, .vote-result {
+	display: none;
+}
+.vote-hover {
+	box-sizing: content-box;
+}
 @media (max-width: 1800px) {
 	.float-menu {
 		left: 30px;
 	}
 }
+
 @media (max-width: 1400px) {
 	.float-menu {
 		display: none;
@@ -1178,10 +1255,10 @@ div.owl-item {
 }
 @media (min-width: 1200px) {
 	.owl-prev {
-		right: -2%;
+		left: 0%;
 	}
 	.owl-next {
-		left: -2%;
+		right: 0%;
 	}
 	.container.center {
 		width: 1200px;
@@ -1238,8 +1315,8 @@ div.owl-item {
 		margin: 0 4%;
 	}
 	#fullcarousel-example .item {
-		img {
-			height: 364px;
+		.carousel-img-wrapper {
+			height: 365px;
 		}
 		.slide-descr {
 			width: 37%;
@@ -1262,9 +1339,9 @@ div.owl-item {
 			}
 			.timer .time {
 				font-size: 15px;
-				line-height: 58px;
+				line-height: 23px;
 				vertical-align: middle;
-				margin-top: 0;
+				margin-top: 28px;
 			}
 			.timer .descr {
 				display: none;
@@ -1362,7 +1439,7 @@ div.owl-item {
 		padding-left: 55px;
 	}
 	#fullcarousel-example .item {
-		img {
+		.carousel-img-wrapper {
 			margin-right: 5px;
 		}
 		h3 {
@@ -1374,6 +1451,9 @@ div.owl-item {
 		.timer {
 			right: -5px;
 			left: 24px;
+			.time {
+				margin-right: 10px;
+			}
 		}
 	}
 	.wrapper .bouquet {
@@ -1451,15 +1531,22 @@ div.owl-item {
 			p.action {
 				display: none;
 			}
-			.time {
-				margin-right: 30px;
-			}
+//			.time {
+//				margin-right: 30px;
+//			}
 		}
+	}
+}
+
+@media (max-width: 800px) {
+	.row {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
 	}
 }
 @media (max-width: 768px) {
 	.cart {
-		p: last-child {
+		p:last-child {
 			font-size: 20px;
 		}
 	}
@@ -1490,10 +1577,16 @@ div.owl-item {
 		}
 	}
 	#fullcarousel-example .item {
+		.carousel-img-wrapper {
+			width: 100%;
+			margin-bottom: 5px;
+			height: auto;
+		}
 		img {
+			position: static;
 			width: 100%;
 			height: auto;
-			margin-bottom: 5px;
+			transform: translateX(0%);
 		}
 		.slide-descr {
 			height: auto;
@@ -1527,8 +1620,8 @@ div.owl-item {
 			}
 			.timer .time {
 				font-size: 12px;
-				line-height: 34px;
-				margin-left: 30px;
+				line-height: 20px;
+				margin-top: 16px;
 			}
 			.timer p.action {
 				font-size: 10px;
@@ -1536,9 +1629,9 @@ div.owl-item {
 				display: none;
 			}
 		}
-		a.right {
-			right: -24px;
-		}
+//		a.right {
+//			right: -24px;
+//		}
 	}
 	#fullcarousel-example a.left {
 		left: 5px !important;
@@ -1557,7 +1650,7 @@ div.owl-item {
 @media (max-width: 767px) {
 	.wrapper .bouquet {
 		width: 100%;
-		padding: 0 15px;
+		padding: 0 ;
 	}
 	.logo {
 		width: 75px;
@@ -1622,10 +1715,10 @@ div.owl-item {
 		top: 3px;
 	}
 	.bouquet .owl-next {
-		left: 0;
+		right: 0;
 	}
 	.bouquet .owl-prev {
-		right: 0;
+		left: 0;
 	}
 }
 @media (max-width: 660px) {
@@ -1705,6 +1798,10 @@ div.owl-item {
 			display: block;
 		}
 	}
+	#fullcarousel-example .timer .time .countDiv {
+		width: 8px;
+		margin: 0;
+	}
 }
 @media (max-width: 510px) {
 	.logo {
@@ -1723,7 +1820,7 @@ div.owl-item {
 		position: static;
 		float: none;
 		width: 100%;
-		a: before {
+		a:before {
 			content: "\f105 ";
 			display: inline;
 			font-family: FontAwesome;
@@ -1791,6 +1888,7 @@ div.owl-item {
 	}
 	.social .soc-btn {
 		margin-left: 0;
+		width: auto;
 	}
 	.footer .pod {
 		font-size: 14px;
@@ -1822,6 +1920,12 @@ div.owl-item {
 		.pencil {
 			display: none;
 		}
+	}
+	#fullcarousel-example .timer .time span span.position {
+		width: 7px;
+	}
+	#fullcarousel-example .timer svg {
+		left: 15px;
 	}
 }
 @media (max-width: 380px) {

@@ -26,6 +26,12 @@ $(document).ready(function() {
 		responsiveClass: true,
 		navigationText: false,
 		responsive: {
+			0: {
+				items: 1,
+				nav: true,
+				navigationText: false
+			},
+
 			320: {
 				items: 1,
 				nav: true,
@@ -50,26 +56,18 @@ $(document).ready(function() {
 		}
 	})
 
-	$(function() {
-		$("#slider").slider({
-			range: true,
-			min: 500,
-			max: 25000,
-			values: [500, 25000],
-			slide: function(event, ui) {
-				$('#from').val($("#slider").slider("values", 0));
-				$('#to').val($("#slider").slider("values", 1));
-			}
-		});
-		$('#from').val($("#slider").slider("values", 0));
-		$('#to').val($("#slider").slider("values", 1));
-		$('#from').change(function() {
-			$("#slider").slider("values", 0, $('#from').val())
-		})
 
-		$('#to').change(function() {
-			$("#slider").slider("values", 1, $('#to').val())
-		})
+	$(function(){
+
+		ts = (new Date()).getTime() + 50*24*60*60*1000;
+
+		$('p#time1').countdown({
+			timestamp	: ts			
+		});
+
+		$('p#time2').countdown({
+			timestamp	: ts			
+		});
 
 	});
 	

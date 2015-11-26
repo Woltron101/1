@@ -18,7 +18,7 @@ ul.tree {
 	margin-top: 25px;
 	li {
 		display: inline-block;
-		&: last-child a {
+		&:last-child a {
 			color: #000;
 		}
 		a {
@@ -35,14 +35,47 @@ ul.tree {
 .tovar-foto {
 	float: left;
 	padding: 0;
-	img {
+	
+	.tovar-foto-main {
+		background-color: white;
+		width: 370px;
+		height: 516px;
+		position: relative;
+		margin-bottom: 15px;
 		border: 1px solid #dddcdb;
+		img.main{
+			width: 100%;
+			top: 50%;
+			position: relative;
+			transform: translateY(-50%);
+		}	
+	}	
+	
+	.tovar-foto-pre-wrap {
+		.tovar-foto-pre1, .tovar-foto-pre2, .tovar-foto-pre3 {
+			margin-right: 6px;
+			border: 1px solid #dddcdb;
+			&.act {
+				-webkit-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.5);
+				-moz-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.5);
+				box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.5);
+			}
+		}
+		.tovar-foto-pre3 {
+			margin-right: 0;
+		}
 	}
+	
 }
+//.tovar-foto {
+//	
+//	img {
+//		border: 1px solid #dddcdb;
+//	}
+//}
 .tovar-foto-main {
-	width: 370px;
-	position: relative;
-	margin-bottom: 15px;
+	
+	
 	a.view {
 		display: block;
 		width: 139px;
@@ -57,7 +90,7 @@ ul.tree {
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		&: hover {
+		&:hover {
 			text-decoration: none;
 		}
 		span {
@@ -73,10 +106,7 @@ ul.tree {
 	}
 }
 .tovar-foto-pre {
-	margin-right: 6px;
-	&: last-child {
-		margin-right: 0;
-	}
+	
 }
 .tovar {
 	padding: 20px 0;
@@ -132,7 +162,7 @@ ul.tree {
 			fill: #dadada !important;
 		}
 		svg {
-			path: hover {
+			path:hover {
 				fill: @or !important;
 			}
 			path:hover+path {
@@ -158,7 +188,7 @@ ul.tree {
 		margin: 64px 0 0 8px;
 		word-spacing: 1px;
 		text-align: justify;
-		p: last-child {
+		p:last-child {
 			margin: 19px 0 16px;
 		}
 	}
@@ -185,27 +215,56 @@ form {
 		max-height: 123px
 	}
 	.select-wrap {
-		overflow: hidden;
 		p {
+			
 			float: left;
 			color: #000;
 			font-size: 14px;
 			margin: 5px 20px 0 3px;
 		}
-		select {
-			cursor: pointer;
-			padding-left: 5px;
-			float: left;
+		.dropdown {
+//			cursor: pointer;
+//			padding-left: 5px;
+//			float: left;
 			border: 1px solid #918f8e;
 			width: 121px;
 			height: 35px;
 			background-image: url("../img/select.png");
 			background-position: right 10px center;
 			background-repeat: no-repeat !important;
-			-webkit-appearance: none !important;
-			-moz-appearance: none !important;
-			-ms-appearance: none !important;
-			appearance: none !important;
+			border-radius: 0;
+			font-family: Arial;
+			font-size: 13px !important;
+			color: #7e7c7b !important;
+			font-weight: 400;
+			margin-left: 71px;
+//			font: 400 13px Arial !important;
+//			-webkit-appearance: none !important;
+//			-moz-appearance: none !important;
+//			-ms-appearance: none !important;
+//			appearance: none !important;
+			.carat {
+				position: absolute;
+				right: 12px;
+				top: 50%;
+				margin-top: -4px;
+				border: 1px solid transparent !important;
+				border-top: 1px solid #000 !important;
+				border-left: 1px solid #000 !important;
+				width: 5px !important;
+				height: 5px !important;
+				transform: rotate(-135deg) !important;
+			}
+			ul {
+				padding-left: 0;
+				li:hover {
+					background-color: #d9d7d6;
+				}
+			}
+		}
+		.selected, .dropdown li {
+			font-size: 13px !important;
+			color: #7e7c7b !important;
 		}
 	}
 	.color-wrapp {
@@ -307,7 +366,7 @@ a.close-lb {
 	-webkit-transform: translateX(-50%);
 	-ms-transform: translateX(-50%);
 	transform: translateX(-50%);
-	&: hover {
+	&:hover {
 		color: #fff;
 		text-decoration: none;
 	}
@@ -322,61 +381,69 @@ a.close-lb {
 .footer {
 	padding: 36px 0;
 }
-/*
-div.tovar-foto-main:target {
-	position: fixed !important;	
-	z-index: 111 !important;
-	top: 0 !important;
-	bottom: 0 !important;
-	left: 0 !important;
-	right: 0 !important;
-	background-color:  rgba(0, 0, 0, 0.95) !important;
-	width: 100%;
-	height: 100%;
 
-	img {
-		animation: scale 0.5s ease-in-out;
-		position: relative;
-		left: 50%;
-		width: auto !important;
-		-webkit-transform: translateX(-50%);
-		-ms-transform: translateX(-50%);
-		transform: translateX(-50%);
-		max-height: 100%;
-		margin-top: 70px;
-		border: 5px solid @or;
-		border-radius: 5px;
-
-
-	}
-	.close-lb {
-		display: block;
-	}
-	.view {
-		display: none !important;
-	}
+//div.tovar-foto-main:target {
+//	position: fixed !important;	
+//	z-index: 111 !important;
+//	top: 0 !important;
+//	bottom: 0 !important;
+//	left: 0 !important;
+//	right: 0 !important;
+//	background-color:  rgba(0, 0, 0, 0.95) !important;
+//	width: 100%;
+//	height: 100%;
+//
+//	img {
+//		animation: scale 0.5s ease-in-out;
+//		position: relative;
+//		left: 50%;
+//		width: auto !important;
+//		-webkit-transform: translateX(-50%);
+//		-ms-transform: translateX(-50%);
+//		transform: translateX(-50%);
+//		max-height: 100%;
+//		margin-top: 70px;
+//		border: 5px solid @or;
+//		border-radius: 5px;
+//
+//
+//	}
+//	.close-lb {
+//		display: block;
+//	}
+//	.view {
+//		display: none !important;
+//	}
+//}
+//
+//@keyframes scale {
+//  0% {  opacity: 0; }
+//  100% {  opacity: 1; }
+//}
+#lightbox-container-image-data-box{
+	box-sizing: content-box;
 }
-
-@keyframes scale {
-  0% {  opacity: 0; }
-  100% {  opacity: 1; }
-}*/
 
 @media (max-width: 1200px) {
 	.tovar-foto {
 		width: 370px;
 		margin: 0 30px 0 15px;
 	}
-	.tovar-foto-pre {
-		width: 33%;
-		height: auto;
-		display: block;
-		float: left;
-		margin-right: 1%;
-		&: last-child {
-			width: 32%;
-			margin: 0;
+	.tovar-foto .tovar-foto-pre-wrap {
+		.tovar-foto-pre1, .tovar-foto-pre2, .tovar-foto-pre3 {
+			width: 32.5%;
+			height: auto;
+			display: block;
+			float: left;
+			margin-right: 1%;
+
 		}
+		
+	.tovar-foto-pre3 {
+		width: 32%;
+		margin: 0;
+	}
+	
 	}
 	.tovar-descr {
 		margin-left: 400px;
@@ -396,7 +463,7 @@ div.tovar-foto-main:target {
 		}
 		.text {
 			margin: 40px 0 0 0;
-			p: last-child {
+			p:last-child {
 				margin: 10px 0 10px;
 			}
 		}
@@ -425,7 +492,7 @@ div.tovar-foto-main:target {
 	}
 	.tovar-foto-main {
 		float: left;
-		width: 64%;
+		width: 64% !important;
 		margin-left: 2%;
 		img {
 			width: 100%;
@@ -436,9 +503,13 @@ div.tovar-foto-main:target {
 		width: 29.5%;
 		height: 100%;
 	}
-	.tovar-foto-pre {
+	.tovar-foto-pre1, .tovar-foto-pre2, .tovar-foto-pre3 {
 		float: none;
 		width: 100% !important;
+		margin-bottom: 5px;
+	}
+	.tovar-foto-pre3 {
+		margin-bottom: 0;
 	}
 	.tovar-descr {
 		margin-left: 0px;
@@ -453,6 +524,9 @@ div.tovar-foto-main:target {
 			width: 100%;
 			text-align: center;
 			margin-top: 15px;
+		}
+		.vote-hover {
+			margin-left: 130px;	
 		}
 		.sold,
 		.rating {
@@ -517,7 +591,7 @@ div.tovar-foto-main:target {
 		}
 	}
 	.buttons-wrap {
-		width: 310px;
+		width: 313px;
 		margin: 0 auto;
 	}
 }
